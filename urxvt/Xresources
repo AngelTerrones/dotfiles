@@ -1,0 +1,42 @@
+!------------------------------------------------------------------------------
+! c o l o r -  s e t t i n g s
+
+*background: #161616
+*foreground: #a5a5a5
+
+*color0: #343434
+*color1: #802828
+*color2: #909737
+*color3: #b27d12
+*color4: #1e5673
+*color5: #642337
+*color6: #196271
+*color7: #b3b3b3
+*color8: #424242
+*color9: #8a3232
+*color10: #9ca554
+*color11: #ddb62b
+*color12: #1e6a9a
+*color13: #7d2d41
+*color14: #197885
+*color15: #b3b3b3
+!------------------------------------------------------------------------------
+! u r x v t
+
+URxvt*geometry:         112x22
+URxvt*font:             xft:Source Code Pro:size=10:antialias=true:hinting=true, xft:Source Code Pro for Powerline:size=10:antialias=true:hinting=true
+!URxvt*font:             xft:Source\ Code\ Pro:pixelsize=11:antialias=true:hinting=true,xft:Source\ Code\ Pro:pixelsize=11:antialias=true:hinting=true
+URxvt*urlLauncher:      firefox
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  true
+URxvt*scrollColor:      #000000
+urxvt*cursor:           i-beam
+urxvt*cursorBlink:      true
+urxvt*cursorUnderline:  true
+
+!------------------------------------------------------------------------------
+! Ctrl+Arrows
+URxvt.keysym.Control-Up:          \033[1;5A
+URxvt.keysym.Control-Down:        \033[1;5B
+URxvt.keysym.Control-Left:        \033[1;5D
+URxvt.keysym.Control-Right:       \033[1;5C

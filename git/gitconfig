@@ -1,0 +1,18 @@
+[user]
+	name = Angel Terrones
+	email = angelterrones@gmail.com
+[push]
+	default = simple
+[color]
+	ui = true
+	status = auto
+	branch = auto
+[core]
+	editor = vim
+[cola]
+	fontdiff = Source Code Pro,10,-1,5,50,0,0,0,0,0
+	tabwidth = 4
+	textwidth = 80
+[gui]
+	editor = subl
+	historybrowser = gitk
