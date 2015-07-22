@@ -25,8 +25,8 @@ ln -sfn $PWD/ncmpcpp ~/.ncmpcpp
 
 # urxvt
 echo -e "Installing dotfiles: urxvt"
-ln -sfn $PWD/urxvt ~/.urxvt
-xrdb ~/.urxvt/Xresources
+ln -sfn $PWD/urxvt/Xresources ~/.Xresources
+xrdb ~/.Xresources
 
 # zsh
 echo -e "Installing dotfiles: zsh"
