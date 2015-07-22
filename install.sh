@@ -30,6 +30,7 @@ xrdb ~/.urxvt/Xresources
 
 # zsh
 echo -e "Installing dotfiles: zsh"
+ln -sfn $PWD/zsh ~/.zsh
 ln -sfn $PWD/zsh/zshrc ~/.zshrc
 
 # vim
@@ -38,7 +39,9 @@ cd vim
 source vim_install_pluging.sh
 cd ..
 ln -sfn $PWD/vim ~/.vim
-ln -sfn $PWD/vim/vimrc ~/.vimrc
 
+# Nvidia fan control
+echo -e "Installing dotfiles: fan.sh"
+ln -sfn $PWD/nvidia/fan.sh ~/.fan.sh
 
 echo -e "Installing dotfiles: done"
