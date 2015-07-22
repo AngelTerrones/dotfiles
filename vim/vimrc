@@ -87,7 +87,7 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 " Reload vimrc (auto) {{{
 augroup myvimrc
     au!
-    au BufWritePost ~/.vim/vimrc so $MYVIMRC
+    au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 " }}}
 
@@ -275,6 +275,26 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
 "}}}
+
+" vim-multiple-cursors {{{
+"let g:multi_cursor_use_default_mapping=0
+"let g:multi_cursor_next_key='<C-n>'
+"let g:multi_cursor_prev_key='<C-p>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
+
+function! Multiple_cursors_before()
+    if exists(':NeoCompleteLock')==2
+       exe 'NeoCompleteLock'
+    endif
+endfunction
+
+function! Multiple_cursors_after()
+    if exists(':NeoCompleteUnlock')==2
+        exe 'NeoCompleteUnlock'
+    endif
+endfunction
+" }}}
 
 " shortcuts {{{
 " leader
