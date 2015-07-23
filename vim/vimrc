@@ -304,6 +304,10 @@ function! Multiple_cursors_after()
 endfunction
 " }}}
 
+" vim-simple-todo {{{
+let g:simple_todo_map_keys = 0
+" }}}
+
 " shortcuts {{{
 " leader
 let mapleader="\<Space>"
@@ -350,6 +354,16 @@ nmap <leader>tc :tabclose<cr>
 nmap <leader>tl :tabs<cr>
 nmap <leader>tf :tabn<cr>
 nmap <leader>tp :tabp<cr>
+
+" simple-todo
+nmap <leader>ti <Plug>(simple-todo-new)
+imap <leader>ti <Plug>(simple-todo-new)
+nmap <leader>tI <Plug>(simple-todo-new-start-of-line)
+imap <leader>tI <Plug>(simple-todo-new-start-of-line)
+nmap <leader>tx <Plug>(simple-todo-mark-as-done)
+imap <leader>tx <Plug>(simple-todo-mark-as-done)
+nmap <leader>tX <Plug>(simple-todo-mark-as-undone)
+imap <leader>tX <Plug>(simple-todo-mark-as-undone)
 
 " Disable arrow keys
 "inoremap  <Up>     <NOP>
