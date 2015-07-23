@@ -101,8 +101,14 @@ set guiheadroom=0
 " }}}
 
 " Color {{{
-set background=dark
-colorscheme gruvbox
+"set background=light
+let hour = strftime("%H")
+if 6 <= hour && hour < 18
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
 syntax on
 " }}}
 
