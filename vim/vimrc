@@ -283,6 +283,8 @@ let g:SimpylFold_fold_docstring = 0
 "let g:multi_cursor_skip_key='<C-x>'
 "let g:multi_cursor_quit_key='<Esc>'
 
+let g:multi_cursor_exit_from_insert_mode = 0
+
 function! Multiple_cursors_before()
     if exists(':NeoCompleteLock')==2
        exe 'NeoCompleteLock'
@@ -344,10 +346,10 @@ nmap <leader>tf :tabn<cr>
 nmap <leader>tp :tabp<cr>
 
 " Disable arrow keys
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
 noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
@@ -363,6 +365,12 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
+
+" Ctrl-e: Go to end of line
+inoremap <c-e> <esc>A
+
+" Ctrl-w: Delete previous word, create undo point
+inoremap <c-w> <c-g>u<c-w>
 
 "Open shell
 nmap <C-z> :shell<CR>
