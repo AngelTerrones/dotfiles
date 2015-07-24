@@ -100,6 +100,28 @@ set guioptions-=L  "remove left-hand scroll bar
 set guiheadroom=0
 " }}}
 
+" C/C++ templates {{{
+autocmd BufNewFile *.c  call UpdateHeader("cpp")
+autocmd BufNewFile *.cpp call UpdateHeader("cpp")
+autocmd BufNewFile *.h call UpdateHeader("hpp")
+autocmd BufNewFile *.hpp call UpdateHeader("hpp")
+
+function! UpdateHeader(extension)
+    if a:extension == "cpp"
+        0r ~/.vim/templates/skeleton.cpp
+    else
+        0r ~/.vim/templates/skeleton.hpp
+    endif
+    let l:filename = expand("%:t")
+    let l:FILENAME = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+    let l:time = strftime("%Y/%m/%d %H:%M:%S")
+    %s/<filename>/\=l:filename/g
+    %s/<date>/\=l:time/g
+    %s/<fileguard>/\=l:FILENAME/g
+    call cursor(1,1)
+endfunction
+" }}}
+
 " Color {{{
 "set background=light
 let hour = strftime("%H")
