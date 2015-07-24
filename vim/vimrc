@@ -331,6 +331,10 @@ function! Multiple_cursors_after()
 endfunction
 " }}}
 
+" vim-cpp-enhanced-highlight {{{
+let g:cpp_class_scope_highlight = 1
+" }}}
+
 " vim-simple-todo {{{
 let g:simple_todo_map_keys = 0
 " }}}
