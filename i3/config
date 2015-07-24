@@ -136,6 +136,7 @@ set $tag6 "6:VM"
 set $tag7 "7:Torrent"
 set $tag8 "8:Files"
 set $tag9 "9:Designer"
+set $tag10 "10:Documentation"
 
 # ------------------------------------------------------------------------------
 # Move
@@ -144,6 +145,7 @@ assign [class="Firefox"] $tag1
 assign [class="URxvt"] $tag3
 assign [class="Subl"] $tag2
 assign [class="Gvim"] $tag2
+assign [class="com-mathworks-util-PostVMInit"] $tag2
 assign [class="Thunar"] $tag8
 assign [class="Lxappearance"] $tag8
 assign [class="Vlc"] $tag5
@@ -153,7 +155,7 @@ assign [class="Krita"] $tag4
 assign [class="VirtualBox"] $tag6
 assign [class="Transmission"] $tag7
 assign [class="Designer"] $tag9
-assign [class="com-mathworks-util-PostVMInit"] $tag2
+assign [class="assistant"] $tag10
 
 # ------------------------------------------------------------------------------
 # Floating windows
@@ -174,7 +176,7 @@ bindsym $mod+6 workspace $tag6
 bindsym $mod+7 workspace $tag7
 bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace $tag9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace $tag10
 
 # ------------------------------------------------------------------------------
 # move focused container to workspace
@@ -187,8 +189,8 @@ bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace $tag6
 bindsym $mod+Shift+7 move container to workspace $tag7
 bindsym $mod+Shift+8 move container to workspace $tag8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+9 move container to workspace $tag9
+bindsym $mod+Shift+0 move container to workspace $tag10
 
 # ------------------------------------------------------------------------------
 # reload the configuration file
