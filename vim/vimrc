@@ -72,6 +72,7 @@ set incsearch
 set ruler
 set undolevels=1000
 set backspace=indent,eol,start
+set ssop-=options
 " }}}
 
 " Remove whitespace {{{
@@ -343,7 +344,7 @@ let g:simple_todo_map_keys = 0
 " leader
 let mapleader="\<Space>"
 nnoremap <leader>w :w<CR>
-nnoremap <leader>s :mksession<CR>
+nnoremap <leader>s :mksession!<CR>
 nnoremap <leader>x :q<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>l :noh<CR>
