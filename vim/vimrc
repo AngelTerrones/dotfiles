@@ -117,7 +117,9 @@ function! UpdateHeader(extension)
     let l:time = strftime("%Y/%m/%d %H:%M:%S")
     %s/<filename>/\=l:filename/g
     %s/<date>/\=l:time/g
-    %s/<fileguard>/\=l:FILENAME/g
+    if a:extension == "hpp"
+        %s/<fileguard>/\=l:FILENAME/g
+    endif
     call cursor(1,1)
 endfunction
 " }}}
