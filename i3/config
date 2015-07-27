@@ -33,7 +33,7 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # ------------------------------------------------------------------------------
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec xfce4-terminal
 
 # ------------------------------------------------------------------------------
 # kill focused window
@@ -143,8 +143,11 @@ set $tag10 "10:Documentation"
 # ------------------------------------------------------------------------------
 assign [class="Firefox"] $tag1
 assign [class="URxvt"] $tag3
+assign [class="xfce4-terminal"] $tag3
+assign [class="terminator"] $tag3
 assign [class="Subl"] $tag2
 assign [class="Gvim"] $tag2
+assign [class="Emacs24"] $tag2
 assign [class="com-mathworks-util-PostVMInit"] $tag2
 assign [class="Thunar"] $tag8
 assign [class="Lxappearance"] $tag8
@@ -178,7 +181,7 @@ bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace $tag9
 bindsym $mod+0 workspace $tag10
 
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------2d2d2d
 # move focused container to workspace
 # ------------------------------------------------------------------------------
 bindsym $mod+Shift+1 move container to workspace $tag1
@@ -284,7 +287,7 @@ bindsym $mod+b exec ncmpcpp prev
 bindsym $mod+n exec ncmpcpp toggle
 bindsym $mod+Shift+n exec ncmpcpp stop
 bindsym $mod+m exec ncmpcpp next
-bindsym $mod+Shift+m exec urxvt -e ncmpcpp
+bindsym $mod+Shift+m exec xfce4-terminal -e ncmpcpp
 bindsym $mod+plus exec ncmpcpp volume +10
 bindsym $mod+minus exec ncmpcpp volume -10
 
