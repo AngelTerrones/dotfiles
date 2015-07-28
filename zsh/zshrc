@@ -53,6 +53,7 @@ export PATH=/opt/mgc/embedded/codebench/bin:$PATH
 export MANPATH=/opt/mgc/embedded/codebench/share/doc/mips-mips-sde-elf/man:$MANPATH
 
 #export TERM=rxvt-unicode
+export TERM=xterm-256color
 #stty -ixon
 #source ~/.shell_prompt.sh
 
