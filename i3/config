@@ -143,11 +143,12 @@ set $tag10 "10:Documentation"
 # ------------------------------------------------------------------------------
 assign [class="Firefox"] $tag1
 assign [class="URxvt"] $tag3
-assign [class="xfce4-terminal"] $tag3
+assign [class="Xfce4-terminal"] $tag3
 assign [class="terminator"] $tag3
 assign [class="Subl"] $tag2
 assign [class="Gvim"] $tag2
 assign [class="Emacs24"] $tag2
+assign [class="Emacs"] $tag2
 assign [class="com-mathworks-util-PostVMInit"] $tag2
 assign [class="Thunar"] $tag8
 assign [class="Lxappearance"] $tag8
