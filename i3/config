@@ -314,6 +314,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaper-1950578.jpg
 exec --no-startup-id ~/.fan.sh
 exec --no-startup-id mpd
 exec --no-startup-id numlockx on
+exec --no-startup-id thunar --daemon
 
 # ------------------------------------------------------------------------------
 # switching between workspace
