@@ -156,6 +156,7 @@ assign [class="Vlc"] $tag5
 assign [class="mpv"] $tag5
 assign [class="Gimp"] $tag4
 assign [class="Krita"] $tag4
+assign [class="Inkscape"] $tag4
 assign [class="VirtualBox"] $tag6
 assign [class="Transmission"] $tag7
 assign [class="Designer"] $tag9
