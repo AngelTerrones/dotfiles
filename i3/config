@@ -128,39 +128,39 @@ bindsym $mod+a focus parent
 # Tags
 # ------------------------------------------------------------------------------
 set $tag1 "1:Internet"
-set $tag2 "2:Code"
-set $tag3 "3:Term"
-set $tag4 "4:Draw"
-set $tag5 "5:Media"
-set $tag6 "6:VM"
-set $tag7 "7:Torrent"
-set $tag8 "8:Files"
-set $tag9 "9:Designer"
-set $tag10 "10:Documentation"
+set $tag2 "2:Term"
+set $tag3 "3:Editor"
+set $tag4 "4:Files"
+set $tag5 "5:Draw/Media"
+set $tag6 "6:Qt Designer"
+set $tag7 "7:Documentation"
+set $tag8 "8:Random 1"
+set $tag9 "9:Random 2"
+set $tag10 "10:Random 3"
 
 # ------------------------------------------------------------------------------
 # Move
 # ------------------------------------------------------------------------------
 assign [class="Firefox"] $tag1
-assign [class="URxvt"] $tag3
-assign [class="Xfce4-terminal"] $tag3
-assign [class="terminator"] $tag3
-assign [class="Subl"] $tag2
-assign [class="Gvim"] $tag2
-assign [class="Emacs24"] $tag2
-assign [class="Emacs"] $tag2
-assign [class="com-mathworks-util-PostVMInit"] $tag2
-assign [class="Thunar"] $tag8
-assign [class="Lxappearance"] $tag8
+assign [class="Xfce4-terminal"] $tag2
+assign [class="URxvt"] $tag2
+assign [class="terminator"] $tag2
+assign [class="Subl"] $tag3
+assign [class="Emacs24"] $tag3
+assign [class="Emacs"] $tag3
+assign [class="Gvim"] $tag3
+assign [class="com-mathworks-util-PostVMInit"] $tag3
+assign [class="Thunar"] $tag4
+assign [class="Lxappearance"] $tag4
+assign [class="Gimp"] $tag5
+assign [class="Krita"] $tag5
+assign [class="Inkscape"] $tag5
 assign [class="Vlc"] $tag5
 assign [class="mpv"] $tag5
-assign [class="Gimp"] $tag4
-assign [class="Krita"] $tag4
-assign [class="Inkscape"] $tag4
-assign [class="VirtualBox"] $tag6
-assign [class="Transmission"] $tag7
-assign [class="Designer"] $tag9
-assign [class="assistant"] $tag10
+assign [class="Designer"] $tag6
+assign [class="assistant"] $tag7
+assign [class="VirtualBox"] $tag8
+assign [class="Deluge"] $tag9
 
 # ------------------------------------------------------------------------------
 # Floating windows
@@ -212,9 +212,9 @@ bindsym $mod+Shift+r restart
 # Create Log out, Reboot, Poweroff bindings
 # ------------------------------------------------------------------------------
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
-        bindsym $mod+r exec dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+        bindsym $mod+r exec reboot
         bindsym $mod+l exit
-        bindsym $mod+p exec dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+        bindsym $mod+p exec poweroff
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -267,7 +267,7 @@ bar {
                 inactive_workspace #2d2d2d #2d2d2d #dcdcdc
                 urgent_workspace   #2d2d2d #2d2d2d #dcdcdc
         }
-        position bottom
+        position top
         #status_command i3status -c ~/.i3/i3status.conf
         status_command ~/.i3/i3status.sh
         tray_output primary
@@ -283,22 +283,23 @@ for_window [class="^.*"] border pixel 0
 for_window [class="URxvt"] border pixel 0
 
 # ------------------------------------------------------------------------------
-# music NCMPCPP/MPD
+# music NCMPCPP/MPD/MPC
+# Arch linux
 # ------------------------------------------------------------------------------
-bindsym $mod+b exec ncmpcpp prev
-bindsym $mod+n exec ncmpcpp toggle
-bindsym $mod+Shift+n exec ncmpcpp stop
-bindsym $mod+m exec ncmpcpp next
+bindsym $mod+b exec mpc prev
+bindsym $mod+n exec mpc toggle
+bindsym $mod+Shift+n exec mpc stop
+bindsym $mod+m exec mpc next
 bindsym $mod+Shift+m exec xfce4-terminal -e ncmpcpp
-bindsym $mod+plus exec ncmpcpp volume +10
-bindsym $mod+minus exec ncmpcpp volume -10
+bindsym $mod+plus exec mpc volume +10
+bindsym $mod+minus exec mpc volume -10
 
 # ------------------------------------------------------------------------------
 # other
 # ------------------------------------------------------------------------------
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+f exec thunar
-bindsym $mod+Shift+e exec subl
+bindsym $mod+Shift+e exec emacs
 
 # ------------------------------------------------------------------------------
 # Colors
@@ -311,7 +312,7 @@ client.urgent           #2D2D2D #2D2D2D #dcdcdc #900000
 # ------------------------------------------------------------------------------
 # Startup programs
 # ------------------------------------------------------------------------------
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaper-1950578.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper-1950578.jpg
 exec --no-startup-id ~/.fan.sh
 exec --no-startup-id mpd
 exec --no-startup-id numlockx on
