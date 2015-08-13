@@ -74,6 +74,9 @@ export XILINX=/opt/Xilinx/14.7/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/PlanAhead/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# Haskell
+export PATH=~/.cabal/bin/:$PATH
+
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
