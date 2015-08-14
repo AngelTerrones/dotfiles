@@ -68,6 +68,7 @@ export EDITOR=emacs
 # ROS
 # Do this at the end
 #source /opt/ros/indigo/setup.zsh
+source /opt/ros/jade/setup.zsh
 
 # Xilinx tools
 export XILINX=/opt/Xilinx/14.7/ISE_DS
