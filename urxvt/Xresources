@@ -112,6 +112,9 @@ URxvt*scrollColor:      #000000
 urxvt*cursor:           i-beam
 urxvt*cursorBlink:      true
 urxvt*cursorUnderline:  true
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
 
 !------------------------------------------------------------------------------
 ! Ctrl+Arrows
