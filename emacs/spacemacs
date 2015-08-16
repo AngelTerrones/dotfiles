@@ -24,6 +24,7 @@
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
+     semantic
      better-defaults
      emacs-lisp
      git
@@ -191,8 +192,12 @@ layers configuration."
   ;; enable company
   (global-company-mode)
 
+  ;; pro files are text
+  (add-to-list 'auto-mode-alist '(".pro" . text-mode))
+
   ;; disable mouse
   (mouse-wheel-mode -1)
+
   ;; dummy
   (defun silence ()
     (interactive))
@@ -206,6 +211,11 @@ layers configuration."
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
+  ;; C/C+
+  (setq-default c-basic-offset 4
+                tab-width 4
+                c-default-style "user")
+
   ;; line numbers + relative numbers
   (add-hook 'prog-mode-hook 'linum-mode)
   (linum-relative-toggle)
@@ -214,6 +224,20 @@ layers configuration."
   (require 'key-chord)
   (key-chord-mode 1)
   (key-chord-define evil-insert-state-map  "kj" 'evil-normal-state)
+
+  ;; magit
+  (setq magit-repository-directories '("~/Projects/"))
+
+  ;; autocomplete with snippets
+  (defun autocomplete-show-snippets ()
+    "Show snippets in autocomplete popup."
+    (let ((backend (car company-backends)))
+      (unless (listp backend)
+        (setcar company-backends `(,backend :with company-yasnippet company-files)))))
+
+  ;; See http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html
+  ;; for what this line means
+  (add-hook 'after-change-major-mode-hook 'autocomplete-show-snippets)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
