@@ -17,13 +17,6 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion :variables
-                      auto-completion-return-key-behavior 'complete
-                      auto-completion-tabkeybehavior 'cycle
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-sort-by-usage t)
      semantic
      better-defaults
      emacs-lisp
@@ -45,11 +38,17 @@
              colors-enable-nyan-cat-progress-bar t)
      latex
      shell-scripts
-     finance
+     eyebrowse
      games
      xkcd
-     ;; (clojure :variables
-     ;;          clojure-enable-fancify-simbols t)
+     gtags
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tabkeybehavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t)
      ;; (haskell :variables
      ;;          haskell-enable-ghci-nh-support t
      ;;          haskell-enable-shm-support t
@@ -189,8 +188,10 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
-  ;; enable company
+  ;; company
   (global-company-mode)
+  (setq-default company-minimum-prefix-length 1)
+  (global-set-key (kbd "C-SPC") 'company-complete)
 
   ;; pro files are text
   (add-to-list 'auto-mode-alist '(".pro" . text-mode))
@@ -212,9 +213,28 @@ layers configuration."
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; C/C+
-  (setq-default c-basic-offset 4
-                tab-width 4
-                c-default-style "user")
+  ;; fix indentation (¬_¬)
+  (defun my-c-lineup-inclass (langelem)
+    (let ((inclass (assoc 'inclass c-syntactic-context)))
+      (save-excursion
+        (goto-char (c-langelem-pos inclass))
+        (if (or (looking-at "struct")
+                (looking-at "typedef struct"))
+            '+
+          '++))))
+
+  (defun my-cpp-mode ()
+    "My C++ mode"
+    (c++-mode)
+    (c-set-style "K&R")
+    (setq c-basic-offset 4)
+    (setq tab-width 4)
+    (c-set-offset 'access-label '-)
+    (c-set-offset 'inclass 'my-c-lineup-inclass)
+    ;; ...
+    (setq mode-name "My C++")
+    )
+  (add-to-list 'auto-mode-alist '("\\.[ch]p?p?\\'" . my-cpp-mode))
 
   ;; line numbers + relative numbers
   (add-hook 'prog-mode-hook 'linum-mode)
@@ -228,17 +248,6 @@ layers configuration."
   ;; magit
   (setq magit-repository-directories '("~/Projects/"))
 
-  ;; autocomplete with snippets
-  (defun autocomplete-show-snippets ()
-    "Show snippets in autocomplete popup."
-    (let ((backend (car company-backends)))
-      (unless (listp backend)
-        (setcar company-backends `(,backend :with company-yasnippet company-files)))))
-
-  ;; See http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html
-  ;; for what this line means
-  (add-hook 'after-change-major-mode-hook 'autocomplete-show-snippets)
+  ;; Don't ask about safe variables.
+  (setq enable-local-variables :all)
 )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
