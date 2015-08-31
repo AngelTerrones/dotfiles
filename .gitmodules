@@ -40,6 +40,7 @@
 [submodule "vim/bundle/VimExplorer"]
 	path = vim/bundle/VimExplorer
 	url = https://github.com/mbbill/VimExplorer
+	ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -49,12 +50,14 @@
 [submodule "vim/bundle/vim-move"]
 	path = vim/bundle/vim-move
 	url = https://github.com/matze/vim-move
+	ignore = dirty
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
 [submodule "vim/bundle/vim-startify"]
 	path = vim/bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify
+	ignore = dirty
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
