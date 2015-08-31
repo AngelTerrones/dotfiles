@@ -249,6 +249,10 @@ layers configuration."
   ;; magit
   (setq magit-repository-directories '("~/Projects/"))
 
+  ;; set time stamp
+  (setq-default time-stamp-pattern "8/Last Modified :[ \t]+%3a %3b %02d %02H:%02M:%02S %:y")
+  (add-hook 'before-save-hook 'time-stamp)
+
   ;; Don't ask about safe variables.
   (setq enable-local-variables :all)
 )
