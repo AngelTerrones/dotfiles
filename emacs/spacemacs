@@ -25,7 +25,9 @@
      org
      (shell :variables
            shell-default-height 30
-           shell-default-position 'bottom)
+           shell-default-position 'bottom
+           shell-protect-eshell-prompt t
+           shell-default-term-shell "zsh")
      syntax-checking
      version-control
      (python :variables
@@ -209,8 +211,35 @@ layers configuration."
   (define-key evil-motion-state-map [mouse-4] 'silence)
   (define-key evil-motion-state-map [mouse-5] 'silence)
 
+  (setq-default indent-tabs-mode nil
+                c-basic-offset 4
+                tab-width 4)
+
+  (defun insert-four-spaces (&optional count)
+    (interactive "*p")
+    (insert (make-string (* 4 count) ?\ )))
+
+  (define-minor-mode my-fucking-mode
+    "TAB, plz, fucking work?."
+    :keymap '(([?\t] . insert-four-spaces))
+    :global t)
+
+  (my-fucking-mode 1)
+
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  ;; verilog-mode
+  (setq verilog-indent-level 4
+        verilog-indent-level-module 4
+        verilog-indent-level-declaration 4
+        verilog-indent-level-behavioral 4
+        verilog-indent-level-directive 4
+        verilog-case-indent 4
+        verilog-auto-newline nil
+        verilog-auto-lineup 'all
+        verilog-indent-begin-after-if t
+        verilog-linter "verilator --lint-only -Wall -Wno-fatal")
 
   ;; C/C+
   ;; fix indentation (¬_¬)
