@@ -224,7 +224,7 @@ layers configuration."
     :keymap '(([?\t] . insert-four-spaces))
     :global t)
 
-  (my-fucking-mode 1)
+  ;; (my-fucking-mode 1)
 
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
