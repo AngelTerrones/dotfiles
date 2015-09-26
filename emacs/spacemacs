@@ -17,17 +17,12 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     semantic
+     ;;semantic
      better-defaults
      emacs-lisp
      git
      markdown
      org
-     (shell :variables
-           shell-default-height 30
-           shell-default-position 'bottom
-           shell-protect-eshell-prompt t
-           shell-default-term-shell "zsh")
      syntax-checking
      version-control
      (python :variables
@@ -41,8 +36,8 @@
      latex
      shell-scripts
      eyebrowse
-     games
-     xkcd
+     ;;games
+     ;;xkcd
      gtags
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
@@ -97,8 +92,6 @@ before layers configuration."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-dark
                          solarized-light
-                         spacemacs-light
-                         spacemacs-dark
                          leuven
                          monokai
                          zenburn)
@@ -192,7 +185,7 @@ layers configuration."
 
   ;; company
   (global-company-mode)
-  (setq-default company-minimum-prefix-length 1)
+  ;;(setq-default company-minimum-prefix-length 1)
   (global-set-key (kbd "C-SPC") 'company-complete)
 
   ;; pro files are text
@@ -215,14 +208,14 @@ layers configuration."
                 c-basic-offset 4
                 tab-width 4)
 
-  (defun insert-four-spaces (&optional count)
-    (interactive "*p")
-    (insert (make-string (* 4 count) ?\ )))
+  ;; (defun insert-four-spaces (&optional count)
+  ;;   (interactive "*p")
+  ;;   (insert (make-string (* 4 count) ?\ )))
 
-  (define-minor-mode my-fucking-mode
-    "TAB, plz, fucking work?."
-    :keymap '(([?\t] . insert-four-spaces))
-    :global t)
+  ;; (define-minor-mode my-fucking-mode
+  ;;   "TAB, plz, fucking work?."
+  ;;   :keymap '(([?\t] . insert-four-spaces))
+  ;;   :global t)
 
   ;; (my-fucking-mode 1)
 
