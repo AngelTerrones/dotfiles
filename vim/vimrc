@@ -29,7 +29,7 @@ filetype plugin on
 " }}}
 
 " Ui layout {{{
-set number
+set relativenumber
 set showcmd
 set cursorline
 set wildmenu
@@ -210,18 +210,18 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 0
 
 " python
-let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:syntastic_python_checkers = ['pylint']
 
 " C
 let g:syntastic_c_check_header = 1
-let g:syntastic_c_config_file = 'config'
+" let g:syntastic_c_config_file = 'config'
 let g:syntastic_c_compiler_options = ''
 
 " Cpp
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic -fPIC"
-let g:syntastic_cpp_config_file = 'config'
+" let g:syntastic_cpp_config_file = 'config'
 
 " Cuda
 let g:syntastic_cuda_check_header = 1
@@ -285,7 +285,7 @@ let g:clang_complete_auto    = 0
 let g:clang_complete_copen   = 1
 let g:clang_complete_macros  = 1
 let g:clang_complete_patters = 1
-let g:clang_library_path = '/usr/lib/llvm-3.6/lib/libclang.so.1'
+let g:clang_library_path = '/usr/lib/libclang.so'
 let g:clang_user_options = '|| exit 0'
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
