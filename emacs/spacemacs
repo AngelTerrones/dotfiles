@@ -46,10 +46,10 @@
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
-     ;; (haskell :variables
-     ;;          haskell-enable-ghci-nh-support t
-     ;;          haskell-enable-shm-support t
-     ;;          haskell-enable-hindent-style "johan-tibell")
+     (haskell :variables
+              haskell-enable-ghci-nh-support t
+              haskell-enable-shm-support t
+              haskell-enable-hindent-style "johan-tibell")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
