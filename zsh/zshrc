@@ -56,6 +56,9 @@ export MANPATH=/opt/mgc/embedded/codebench/share/doc/mips-mips-sde-elf/man:$MANP
 export PATH=/opt/riscv/bin/:$PATH
 export LD_LIBRARY_PATH=/opt/riscv/lib/:$LD_LIBRARY_PATH
 export MANPATH=/opt/riscv/share/man:$MANPATH
+export PATH=/opt/riscv32/bin/:$PATH
+export LD_LIBRARY_PATH=/opt/riscv32/lib/:$LD_LIBRARY_PATH
+export MANPATH=/opt/riscv32/share/man:$MANPATH
 
 #export TERM=rxvt-unicode
 export TERM=xterm-256color
