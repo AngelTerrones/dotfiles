@@ -46,6 +46,7 @@
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
+     scala
      ;; (haskell :variables
      ;;          haskell-enable-ghci-nh-support t
      ;;          haskell-enable-shm-support t
@@ -129,9 +130,14 @@ before layers configuration."
    ;; If non nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content.
    dotspacemacs-enable-paste-micro-state nil
-   ;; Guide-key delay in seconds. The Guide-key is the popup buffer listing
-   ;; the commands bound to the current keystrokes.
-   dotspacemacs-guide-key-delay 0.4
+   ;; Which-key delay in seconds. The which-key buffer is the popup listing
+   ;; the commands bound to the current keystroke sequence. (default 0.4)
+   dotspacemacs-which-key-delay 0.4
+   ;; Which-key frame position. Possible values are `right', `bottom' and
+   ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
+   ;; right; if there is insufficient space it displays it at the bottom.
+   ;; (default 'bottom)
+   dotspacemacs-which-key-position 'right
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil ;; to boost the loading time.
@@ -178,7 +184,7 @@ before layers configuration."
   ;; User initialization goes here
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
@@ -221,6 +227,10 @@ layers configuration."
 
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  ;; Org
+  (require 'org)
+  (plist-put org-format-latex-options :scale 2.5)
 
   ;; verilog-mode
   (setq verilog-indent-level 4
