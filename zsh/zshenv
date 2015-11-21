@@ -1,0 +1,39 @@
+# MIPS toolchain
+export PATH=/opt/mgc/embedded/codebench/bin:$PATH
+export MANPATH=/opt/mgc/embedded/codebench/share/doc/mips-mips-sde-elf/man:$MANPATH
+
+# RISCV toolchain
+export PATH=/opt/riscv/bin/:$PATH
+export LD_LIBRARY_PATH=/opt/riscv/lib/:$LD_LIBRARY_PATH
+export MANPATH=/opt/riscv/share/man:$MANPATH
+export PATH=/opt/riscv32/bin/:$PATH
+export LD_LIBRARY_PATH=/opt/riscv32/lib/:$LD_LIBRARY_PATH
+export MANPATH=/opt/riscv32/share/man:$MANPATH
+
+# Color
+export TERM=xterm-256color
+
+# CUDA
+export CUDA_HOME=/opt/cuda
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+
+PATH=${CUDA_HOME}/bin:${PATH}
+export PATH
+
+# default editor
+export EDITOR=emacs
+
+# ROS
+# Do this at the end
+source /opt/ros/jade/setup.zsh
+
+# Xilinx tools
+export XILINX=/opt/Xilinx/14.7/ISE_DS
+export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/PlanAhead/bin
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Haskell
+export PATH=~/.cabal/bin/:$PATH
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
