@@ -101,7 +101,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 12
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -137,7 +137,7 @@ before layers configuration."
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'right
+   dotspacemacs-which-key-position 'bottom
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil ;; to boost the loading time.
@@ -231,6 +231,19 @@ layers configuration."
   ;; Org
   (require 'org)
   (plist-put org-format-latex-options :scale 2.5)
+  ;; Code evaluation
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((ditaa . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . nil)
+     (haskell . nil)
+     (latex . t) ; this is the entry to activate LaTeX
+     (python . t)
+     (sh . t)))
+  (setq org-latex-create-formula-image-program 'imagemagick)
+  (setq org-startup-with-inline-images t)
 
   ;; verilog-mode
   (setq verilog-indent-level 4
@@ -288,3 +301,9 @@ layers configuration."
   ;; Don't ask about safe variables.
   (setq enable-local-variables :all)
 )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/org/riscv/todo.org"))))
