@@ -186,7 +186,7 @@ bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace $tag9
 bindsym $mod+0 workspace $tag10
 
-# ------------------------------------------------------------------------------2d2d2d
+# ------------------------------------------------------------------------------
 # move focused container to workspace
 # ------------------------------------------------------------------------------
 bindsym $mod+Shift+1 move container to workspace $tag1
@@ -316,7 +316,8 @@ client.urgent           #2D2D2D #2D2D2D #dcdcdc #900000
 # Startup programs
 # ------------------------------------------------------------------------------
 #exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper-1950578.jpg
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/haskell.png
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/outgoing.jpg --no-xinerama
+#exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/haskell.png
 
 exec --no-startup-id ~/.fan.sh
 exec --no-startup-id mpd
