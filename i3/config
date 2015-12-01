@@ -131,7 +131,7 @@ bindsym $mod+a focus parent
 # ------------------------------------------------------------------------------
 set $tag1 "1:Internet"
 set $tag2 "2:Term"
-set $tag3 "3:Editor"
+set $tag3 "3:Emacs"
 set $tag4 "4:Files"
 set $tag5 "5:Draw/Media"
 set $tag6 "6:Qt Designer"
@@ -147,11 +147,8 @@ assign [class="Firefox"] $tag1
 assign [class="Xfce4-terminal"] $tag2
 assign [class="URxvt"] $tag2
 assign [class="terminator"] $tag2
-assign [class="Subl"] $tag9
 assign [class="Emacs24"] $tag3
 assign [class="Emacs"] $tag3
-assign [class="Gvim"] $tag3
-assign [class="com-mathworks-util-PostVMInit"] $tag3
 assign [class="Thunar"] $tag4
 assign [class="Lxappearance"] $tag4
 assign [class="Gimp"] $tag5
@@ -164,6 +161,9 @@ assign [class="assistant"] $tag7
 assign [class="MuPDF"] $tag7
 assign [class="VirtualBox"] $tag8
 assign [class="Deluge"] $tag9
+assign [class="Subl"] $tag0
+assign [class="Gvim"] $tag0
+assign [class="com-mathworks-util-PostVMInit"] $tag0
 
 # ------------------------------------------------------------------------------
 # Floating windows
@@ -259,8 +259,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 # ------------------------------------------------------------------------------
 bar {
-        mode dock
-        font pango: Source Code Pro Medium 9
+#mode hide
+#modifier Mod1
+        font pango: Source Code Pro Medium 10
         colors {
                 background #2d2d2d
                 #statusline #d64937
@@ -280,7 +281,7 @@ bar {
 # Borderless windows
 # ------------------------------------------------------------------------------
 new_window normal
-hide_edge_borders vertical
+hide_edge_borders both
 #new_window 1pixel
 for_window [class="^.*"] border pixel 1
 for_window [class="URxvt"] border pixel 1
