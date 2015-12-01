@@ -88,6 +88,9 @@ before layers configuration."
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'."
    dotspacemacs-startup-lists '(recents projects)
+   ;; Number of recent files to show in the startup buffer. Ignored if
+   ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
+   dotspacemacs-startup-recent-list-size 15
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -241,6 +244,7 @@ layers configuration."
      (haskell . nil)
      (latex . t) ; this is the entry to activate LaTeX
      (python . t)
+     (scala . t)
      (sh . t)))
   (setq org-latex-create-formula-image-program 'imagemagick)
   (setq org-startup-with-inline-images t)
