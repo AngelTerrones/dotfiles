@@ -161,9 +161,9 @@ assign [class="assistant"] $tag7
 assign [class="MuPDF"] $tag7
 assign [class="VirtualBox"] $tag8
 assign [class="Deluge"] $tag9
-assign [class="Subl"] $tag0
-assign [class="Gvim"] $tag0
-assign [class="com-mathworks-util-PostVMInit"] $tag0
+assign [class="Subl"] $tag10
+assign [class="Gvim"] $tag10
+assign [class="com-mathworks-util-PostVMInit"] $tag10
 
 # ------------------------------------------------------------------------------
 # Floating windows
