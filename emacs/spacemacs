@@ -217,16 +217,8 @@ layers configuration."
                 c-basic-offset 4
                 tab-width 4)
 
-  ;; (defun insert-four-spaces (&optional count)
-  ;;   (interactive "*p")
-  ;;   (insert (make-string (* 4 count) ?\ )))
-
-  ;; (define-minor-mode my-fucking-mode
-  ;;   "TAB, plz, fucking work?."
-  ;;   :keymap '(([?\t] . insert-four-spaces))
-  ;;   :global t)
-
-  ;; (my-fucking-mode 1)
+  ;; Scala
+  (setq scala-indent:step 4)
 
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
