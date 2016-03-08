@@ -121,7 +121,7 @@ centered_cursor = "yes"
 discard_colors_if_item_is_selected = "no"
 display_remaining_time = "yes"
 display_bitrate = "no"
-playlist_display_mode = "classic"
+playlist_display_mode = "columns"
 enable_window_title = "no"
 clock_display_seconds = "no"
 
