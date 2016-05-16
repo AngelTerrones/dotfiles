@@ -336,6 +336,7 @@ layers configuration. You are free to put any user code."
         verilog-linter "verilator --lint-only -Wall -Wno-fatal")
 
   ;; C/C+
+  (setq-default flycheck-clang-language-standard "c++11")
   ;; fix indentation (¬_¬)
   (defun my-c-lineup-inclass (langelem)
     (let ((inclass (assoc 'inclass c-syntactic-context)))
