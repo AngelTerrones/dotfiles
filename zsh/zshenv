@@ -1,9 +1,9 @@
 # MIPS toolchain
-export PATH=/opt/mgc/embedded/codebench/bin:$PATH
-export MANPATH=/opt/mgc/embedded/codebench/share/doc/mips-mips-sde-elf/man:$MANPATH
+#  export PATH=/opt/mgc/embedded/codebench/bin:$PATH
+# export MANPATH=/opt/mgc/embedded/codebench/share/doc/mips-mips-sde-elf/man:$MANPATH
 
 # RISCV toolchain
-export PATH=/opt/riscv/bin/:$PATH
+export PATH=/opt/riscv/bin:$PATH
 export LD_LIBRARY_PATH=/opt/riscv/lib/:$LD_LIBRARY_PATH
 export MANPATH=/opt/riscv/share/man:$MANPATH
 
@@ -22,7 +22,7 @@ export EDITOR=emacs
 
 # ROS
 # Do this at the end
-# source /opt/ros/jade/setup.zsh
+source /opt/ros/jade/setup.zsh
 
 # Xilinx tools
 export XILINX=/opt/Xilinx/14.7/ISE_DS
@@ -31,6 +31,3 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Haskell
 export PATH=~/.cabal/bin/:$PATH
-
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-
