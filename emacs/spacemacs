@@ -367,8 +367,8 @@ layers configuration. You are free to put any user code."
   (add-to-list 'auto-mode-alist '("\\.[ch]p?p?\\'" . my-cpp-mode))
 
   ;; line numbers + relative numbers
-  (add-hook 'prog-mode-hook 'linum-mode)
-  (linum-relative-toggle)
+  (add-hook 'prog-mode-hook 'nlinum-mode)
+  (nlinum-relative-toggle)
 
   ;; kj = ESC
   (require 'key-chord)
