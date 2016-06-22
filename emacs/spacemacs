@@ -35,7 +35,7 @@ values."
      syntax-checking
      version-control
      (python :variables
-             python-test-runnet 'pytest)
+             python-test-runner '(pytest nose))
      ipython-notebook
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
@@ -385,6 +385,3 @@ layers configuration. You are free to put any user code."
   ;; Don't ask about safe variables.
   (setq enable-local-variables :all)
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
