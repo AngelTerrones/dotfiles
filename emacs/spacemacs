@@ -36,13 +36,11 @@ values."
      version-control
      (python :variables
              python-test-runner '(pytest nose))
-     ipython-notebook
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      (colors :variables
-             colors-colorize-identifiers 'all
-             colors-enable-rainbow-identifiers t
+             ;colors-colorize-identifiers 'all
              colors-enable-nyan-cat-progress-bar t)
      latex
      shell-scripts
@@ -124,9 +122,9 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         solarized-dark
+                         flatland
                          solarized-light
-                         ;;flatland
+                         solarized-dark
                          leuven
                          monokai
                          zenburn)
@@ -262,7 +260,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'all
    ))
 
 (defun dotspacemacs/user-init ()
@@ -276,6 +274,9 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  ;; (add-hook 'prog-mode-hook 'auto-fill-mode)
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+
   ;; company
   (global-company-mode)
   ;;(setq-default company-minimum-prefix-length 1)
@@ -306,6 +307,10 @@ layers configuration. You are free to put any user code."
 
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (setq TeX-view-program-selection
+        '((output-pdf "PDF Viewer")))
+  (setq TeX-view-program-list
+        '(("PDF Viewer" "okular %o")))
 
   ;; Org
   (require 'org)
@@ -349,11 +354,6 @@ layers configuration. You are free to put any user code."
             '+
           '++))))
 
-  (setq TeX-view-program-selection
-        '((output-pdf "PDF Viewer")))
-  (setq TeX-view-program-list
-        '(("PDF Viewer" "okular %o")))
-
   (defun my-cpp-mode ()
     "My C++ mode"
     (c++-mode)
@@ -387,3 +387,17 @@ layers configuration. You are free to put any user code."
   ;; Don't ask about safe variables.
   (setq enable-local-variables :all)
   )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (auto-complete anzu iedit smartparens flycheck git-gutter yasnippet company helm popup helm-core avy markdown-mode projectile magit magit-popup async hydra s powerline evil-unimpaired org-projectile git-link mwim zenburn-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline solarized-theme smeargle restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode pcre2el paradox orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint key-chord info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md ggtags flycheck-pos-tip flx-ido flatland-theme fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav disaster diff-hl define-word cython-mode company-statistics company-shell company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
