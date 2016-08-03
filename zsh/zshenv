@@ -1,7 +1,3 @@
-# MIPS toolchain
-#  export PATH=/opt/mgc/embedded/codebench/bin:$PATH
-# export MANPATH=/opt/mgc/embedded/codebench/share/doc/mips-mips-sde-elf/man:$MANPATH
-
 # RISCV toolchain
 export PATH=/opt/riscv/bin:$PATH
 export LD_LIBRARY_PATH=/opt/riscv/lib/:$LD_LIBRARY_PATH
@@ -13,7 +9,6 @@ export TERM=xterm-256color
 # CUDA
 export CUDA_HOME=/opt/cuda
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
-
 PATH=${CUDA_HOME}/bin:${PATH}
 export PATH
 
@@ -27,7 +22,7 @@ alias catkin_make='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INC
 alias catkin_make_isolated='catkin_make_isolated -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 
 # Xilinx tools
-export XILINX=/opt/Xilinx/14.7/ISE_DS
+export XILINX=/opt/xilinx/14.7/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/PlanAhead/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
