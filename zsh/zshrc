@@ -47,6 +47,4 @@ ZSH_THEME="bira"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/git-flow/git-flow-completion.zsh
