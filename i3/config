@@ -36,8 +36,7 @@ floating_modifier $mod
 # bindsym $mod+Return exec i3-sensible-terminal
 # ------------------------------------------------------------------------------
 #bindsym $mod+Return exec urxvt
-#bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec xfce4-terminal
 
 # ------------------------------------------------------------------------------
 # kill focused window
@@ -155,7 +154,6 @@ assign [class="terminator"] $tag2
 assign [class="Emacs24"] $tag3
 assign [class="Emacs"] $tag3
 assign [class="Thunar"] $tag4
-assign [class="dolphin"] $tag4
 assign [class="Lxappearance"] $tag4
 assign [class="Gimp"] $tag5
 assign [class="Krita"] $tag5
@@ -267,7 +265,7 @@ bindsym $mod+r mode "resize"
 bar {
 #mode hide
 #modifier Mod1
-        font pango: Source Code Pro Medium 10
+        font pango: Source Code Pro Medium 11
         colors {
                 background #2d2d2d
                 #statusline #d64937
@@ -300,7 +298,7 @@ bindsym $mod+b exec mpc prev
 bindsym $mod+n exec mpc toggle
 bindsym $mod+Shift+n exec mpc stop
 bindsym $mod+m exec mpc next
-bindsym $mod+Shift+m exec konsole -e ncmpcpp
+bindsym $mod+Shift+m exec xfce4-terminal -e ncmpcpp
 bindsym $mod+plus exec mpc volume +10
 bindsym $mod+minus exec mpc volume -10
 
@@ -308,7 +306,7 @@ bindsym $mod+minus exec mpc volume -10
 # other
 # ------------------------------------------------------------------------------
 bindsym $mod+Shift+w exec chromium
-bindsym $mod+Shift+f exec dolphin
+bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+e exec emacs
 
 # ------------------------------------------------------------------------------
@@ -328,9 +326,10 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/outgoing.jpg --no-xiner
 
 exec --no-startup-id ~/.fan.sh
 exec --no-startup-id mpd
+exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id numlockx on
-#exec --no-startup-id thunar --daemon
-exec --no-startup-id compton -CGb --backend glx --vsync opengl
+exec --no-startup-id thunar --daemon
+#exec --no-startup-id compton -CGb --backend glx --vsync opengl
 
 # ------------------------------------------------------------------------------
 # switching between workspace
@@ -349,7 +348,8 @@ bindsym $mod+Shift+Left move workspace to output left
 # Custom KeyBinds
 # ------------------------------------------------------------------------------
 bindsym Control+mod1+l exec sh ~/.i3/i3lock.sh
-bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
+bindsym Print exec xfce4-screenshooter
+#bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 
 # ------------------------------------------------------------------------------
 # set the bloody keyboard layout

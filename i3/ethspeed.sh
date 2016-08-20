@@ -13,7 +13,7 @@ path="/dev/shm/measure-net-speed"
 #  find /sys/devices -name statistics
 # If you have more (or less) than two adapters, simply adjust the script here
 # and in the next block.
-eth0="/sys/devices/pci0000:00/0000:00:1c.2/0000:04:00.0/net/enp4s0/statistics"
+eth0="/sys/devices/virtual/net/lo/statistics"
 
 read eth0_rx < "${eth0}/rx_bytes"
 read eth0_tx < "${eth0}/tx_bytes"
