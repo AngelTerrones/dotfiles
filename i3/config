@@ -146,7 +146,7 @@ set $tag10 "10:"
 # Move
 # ------------------------------------------------------------------------------
 assign [class="Firefox"] $tag1
-assign [class="chromium"] $tag1
+assign [class="Chromium"] $tag1
 assign [class="Xfce4-terminal"] $tag2
 assign [class="URxvt"] $tag2
 assign [class="konsole"] $tag2
@@ -330,6 +330,8 @@ exec --no-startup-id mpd
 exec --no-startup-id numlockx on
 exec --no-startup-id thunar --daemon
 exec --no-startup-id guake
+exec --no-startup-id insync start
+exec --no-startup-id nm-applet
 
 # ------------------------------------------------------------------------------
 # switching between workspace
