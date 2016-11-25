@@ -16,3 +16,5 @@
 [gui]
 	editor = subl
 	historybrowser = gitk
+[merge]
+	tool = meld
