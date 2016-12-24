@@ -167,7 +167,7 @@ assign [class="VirtualBox"] $tag8
 assign [class="ktorrent"] $tag9
 assign [class="Subl"] $tag10
 assign [class="Gvim"] $tag10
-assign [class="com-mathworks-util-PostVMInit"] $tag10
+assign [class="MATLAB"] $tag10
 
 # ------------------------------------------------------------------------------
 # Floating windows
@@ -176,6 +176,7 @@ assign [class="com-mathworks-util-PostVMInit"] $tag10
 #for_window [class="com-mathworks-util-PostVMInit"] floating enable
 #for_window [title="MATLAB R2014a"] floating enable border none
 for_window [class="Main.py"] floating enable
+for_window [title="Simulink"] floating enable
 
 # ------------------------------------------------------------------------------
 # switch to workspace
