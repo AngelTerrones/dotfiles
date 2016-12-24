@@ -12,7 +12,7 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 export PATH=${PATH}:${CUDA_HOME}/bin
 
 # MATLAB
-export MATLAB_HOME=/opt/MATLAB/R2015b
+export MATLAB_HOME=/opt/MATLAB/R2016b
 export PATH=${PATH}:${MATLAB_HOME}/bin
 
 # default editor
