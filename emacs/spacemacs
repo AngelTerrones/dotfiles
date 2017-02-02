@@ -327,17 +327,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (exec-path-from-shell-copy-env "SSH_AGENT_PID")
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
-  ;; (add-hook 'prog-mode-hook 'auto-fill-mode)
-  ;; (add-hook 'text-mode-hook 'auto-fill-mode)
 
   ;; company
   (global-company-mode)
-  ;;(setq-default company-minimum-prefix-length 1)
   (global-set-key (kbd "C-SPC") 'company-complete)
-
-  (setq-default indent-tabs-mode nil
-                c-basic-offset 4
-                tab-width 4)
 
   ;; python
   ;;(setq python-shell-interpreter "ipython")
@@ -349,24 +342,6 @@ you should place your code here."
         '((output-pdf "PDF Viewer")))
   (setq TeX-view-program-list
         '(("PDF Viewer" "mupdf %o")))
-
-  ;; Org
-  (require 'org)
-  (plist-put org-format-latex-options :scale 2.5)
-  ;; Code evaluation
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((ditaa . t)
-     (dot . t)
-     (emacs-lisp . t)
-     (gnuplot . nil)
-     (haskell . nil)
-     (latex . t) ; this is the entry to activate LaTeX
-     (python . t)
-     (scala . t)
-     (sh . t)))
-  (setq org-latex-create-formula-image-program 'imagemagick)
-  (setq org-startup-with-inline-images t)
 
   ;; verilog-mode
   (setq verilog-indent-level 4
@@ -382,6 +357,9 @@ you should place your code here."
 
   ;; C/C+
   (setq-default flycheck-clang-language-standard "c++11")
+  (setq-default indent-tabs-mode nil
+                c-basic-offset 4
+                tab-width 4)
 
   ;; line numbers + relative numbers
   (add-hook 'prog-mode-hook 'linum-mode)
@@ -391,28 +369,5 @@ you should place your code here."
   (setq magit-repository-directories '("~/Projects/"))
 
   ;; Don't ask about safe variables.
-  (setq enable-local-variables :all)
+  ;; (setq enable-local-variables :all)
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (bind-key hydra smartparens highlight helm helm-core projectile yapfify wolfram-mode unfill thrift stickyfunc-enhance stan-mode srefactor smeargle scad-mode rainbow-mode rainbow-identifiers qml-mode pyvenv pytest pyenv-mode py-isort pip-requirements pdf-tools tablist orgit org-projectile org-present org org-pomodoro alert log4e gntp org-download mwim mmm-mode matlab-mode markdown-toc markdown-mode magit-gitflow live-py-mode julia-mode insert-shebang hy-mode htmlize helm-pydoc helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip flycheck fish-mode evil-magit magit magit-popup git-commit with-editor disaster cython-mode company-statistics company-shell company-quickhelp pos-tip company-c-headers company-auctex company-anaconda company color-identifiers-mode cmake-mode clang-format auto-yasnippet yasnippet auto-dictionary auctex-latexmk auctex arduino-mode anaconda-mode pythonic ac-ispell auto-complete flatland-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
