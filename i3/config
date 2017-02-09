@@ -158,6 +158,8 @@ assign [class="Lxappearance"] $tag4
 assign [class="Gimp"] $tag5
 assign [class="krita"] $tag5
 assign [class="Inkscape"] $tag5
+assign [class="nomacs"] $tag5
+assign [class="Image Lounge"] $tag5
 assign [class="Vlc"] $tag5
 assign [class="cantata"] $tag5
 assign [class="Designer"] $tag6
@@ -323,7 +325,8 @@ client.urgent           #2D2D2D #2D2D2D #dcdcdc #900000
 # ------------------------------------------------------------------------------
 # Startup programs
 # ------------------------------------------------------------------------------
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/archlinux.png
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/IrFMpUu.jpg
+#exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/archlinux.png
 #exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/archlinux.png --no-xinerama
 
 exec --no-startup-id ~/.fan.sh
