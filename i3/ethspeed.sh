@@ -56,17 +56,19 @@ if [[ "${time_diff}" -gt 0 ]]; then
   if [[ "$rx_rate" -gt 1048576 ]]; then
     echo -n "${rx_kib:0:-3}.${rx_kib: -3:-2} M↓"
   else
-    echo -n "${rx_kib} K↓"
+    #echo -n "${rx_kib} K↓"
+    printf "%4d K↑" ${rx_kib}
   fi
 
-  echo -n "  "
+  echo -n "|"
 
   # outgoing
   tx_kib=$(( $tx_rate >> 10 ))
   if [[ "$tx_rate" -gt 1048576 ]]; then
     echo -n "${tx_kib:0:-3}.${tx_kib: -3:-2} M↑"
   else
-    echo -n "${tx_kib} K↑"
+    #echo -n "${tx_kib} K↑"
+    printf "%4d K↑" ${tx_kib}
   fi
 else
   echo -n " ? "
