@@ -30,7 +30,7 @@ export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/P
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Haskell
-#export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/.cabal/bin
 
 # add private key
 SSH_ENV="$HOME/.ssh/environment"
