@@ -63,16 +63,19 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
-     version-control
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (version-control :variables
+                      version-control-diff-side 'left)
+     (shell :variables
+      shell-default-shell 'term
+      shell-default-term-shell "/bin/zsh"
+            shell-default-height 45
+            shell-default-position 'bottom)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(cuda-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -144,7 +147,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(wombat
+   dotspacemacs-themes '(
                          flatland
                          spacemacs-dark
                          spacemacs-light)
@@ -326,7 +329,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (spacemacs/load-theme 'flatland)
+  ;; (spacemacs/load-theme 'flatland)
   (exec-path-from-shell-copy-env "SSH_AGENT_PID")
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
 
@@ -358,11 +361,9 @@ you should place your code here."
 
   ;; C/C+
   (setq-default flycheck-clang-language-standard "c++11")
-  ;; (setq c-default-style '((java-mode . "java")
-  ;;                         (awk-mode . "awk")
-  ;;                         (c-mode . "k&r")
-  ;;                         (c++-mode . "stroustrup")
-  ;;                         (other . "linux")))
+  (setq c-default-style "linux"
+        c-basic-offset 4
+        tab-width 4)
   ;; (setq-default indent-tabs-mode nil
   ;;               c-basic-offset 4
   ;;               tab-width 4)
