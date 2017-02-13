@@ -3,13 +3,13 @@ msg=$({ echo "status"; sleep 0.1; echo "currentsong"; sleep 0.1; echo "close"; }
 
 state=$(echo "${msg}" | sed -n 's/state: //p')
 artist=$(echo "${msg}" | sed -n 's/^Artist: //p')
-title=$(echo "${msg}" | sed -n 's/Title: //p' | sed -n 's/\\/-/p') # Replace \ with -
+title=$(echo "${msg}" | sed -n 's/Title: //p')
 
 if [ -z $artist ] ; then
 	artist=$(echo Unknown artist)
 fi
 if [ -z $title ] ; then
-	artist=$(echo Unknown song)
+	title=$(echo Unknown song)
 fi
 
 if [[ ${state} = "play" ]]; then
