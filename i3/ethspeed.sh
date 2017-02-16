@@ -57,7 +57,7 @@ if [[ "${time_diff}" -gt 0 ]]; then
     echo -n "${rx_kib:0:-3}.${rx_kib: -3:-2} M↓"
   else
     #echo -n "${rx_kib} K↓"
-    printf "%4d K↑" ${rx_kib}
+    printf "%4d K↓" ${rx_kib}
   fi
 
   echo -n "|"
