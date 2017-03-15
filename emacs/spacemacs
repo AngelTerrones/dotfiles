@@ -45,7 +45,6 @@ values."
      markdown
      org
      syntax-checking
-     auto-completion
      extra-langs
      (python :variables
              python-test-runner '(pytest nose))
@@ -61,7 +60,6 @@ values."
                       auto-completion-tabkeybehavior 'cycle
                       auto-completion-complete-with-key-sequence nil
                       auto-completion-enable-help-tooltip t
-                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
      (version-control :variables
                       version-control-diff-side 'left)
@@ -70,6 +68,9 @@ values."
       shell-default-term-shell "/bin/zsh"
             shell-default-height 45
             shell-default-position 'bottom)
+     yaml
+     ;; private layers
+     mineo-rtags
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -156,7 +157,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 12
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -360,13 +361,12 @@ you should place your code here."
         verilog-linter "verilator --lint-only -Wall -Wno-fatal")
 
   ;; C/C+
-  (setq-default flycheck-clang-language-standard "c++11")
-  (setq c-default-style "linux"
-        c-basic-offset 4
-        tab-width 4)
-  ;; (setq-default indent-tabs-mode nil
-  ;;               c-basic-offset 4
-  ;;               tab-width 4)
+  ;; (setq-default flycheck-clang-language-standard "c++11")
+  (put 'flycheck-clang-args 'safe-local-variable (lambda (xx) t))
+  (put 'company-clang-arguments 'safe-local-variable (lambda (xx) t))
+  (put 'company-c-headers-path-system 'safe-local-variable (lambda (xx) t))
+  (put 'flycheck-clang-language-standard 'safe-local-variable (lambda (xx) t))
+  (setq c-default-style "linux")
 
   ;; line numbers + relative numbers
   (add-hook 'prog-mode-hook 'linum-mode)
@@ -374,7 +374,4 @@ you should place your code here."
 
   ;; magit
   (setq magit-repository-directories '("~/Projects/"))
-
-  ;; Don't ask about safe variables.
-  ;; (setq enable-local-variables :all)
   )
