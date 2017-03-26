@@ -69,6 +69,7 @@ values."
             shell-default-height 45
             shell-default-position 'bottom)
      yaml
+     haskell
      ;; private layers
      mineo-rtags
      )
