@@ -70,6 +70,7 @@ values."
             shell-default-position 'bottom)
      yaml
      haskell
+     gpu
      ;; private layers
      mineo-rtags
      )
