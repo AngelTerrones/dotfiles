@@ -165,6 +165,7 @@ assign [class="cantata"] $tag5
 assign [class="Designer"] $tag6
 assign [class="assistant"] $tag7
 assign [class="MuPDF"] $tag7
+assign [class="Evince"] $tag7
 assign [class="Mendeley Desktop"] $tag7
 assign [class="QComicBook"] $tag7
 assign [class="VirtualBox"] $tag8
