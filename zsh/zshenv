@@ -18,12 +18,6 @@ export PATH=${PATH}:${MATLAB_HOME}/bin
 # default editor
 export EDITOR=vim
 
-# ROS
-# Do this at the end
-source /opt/ros/jade/setup.zsh
-alias catkin_make='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
-alias catkin_make_isolated='catkin_make_isolated -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
-
 # Xilinx tools
 export XILINX=/opt/Xilinx/14.7/ISE_DS
 export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/PlanAhead/bin
@@ -32,21 +26,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Haskell
 export PATH=$PATH:~/.cabal/bin
 
-# add private key
-SSH_ENV="$HOME/.ssh/environment"
-function start_agent {
-        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-        chmod 600 "${SSH_ENV}"
-        . "${SSH_ENV}" > /dev/null
-        /usr/bin/ssh-add -t 432000 ;
-        ssh-add ~/.ssh/angelterrones
-}
+# ROS
+# Do this at the end
+source /opt/ros/jade/setup.zsh
+alias catkin_make='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
+alias catkin_make_isolated='catkin_make_isolated -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 
-if [ -f "${SSH_ENV}" ]; then
-        . "${SSH_ENV}" > /dev/null
-        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-                start_agent;
-        }
-else
-        start_agent;
-fi
+# SSH agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
