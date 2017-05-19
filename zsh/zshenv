@@ -19,9 +19,9 @@ export PATH=${PATH}:${MATLAB_HOME}/bin
 export EDITOR=vim
 
 # Xilinx tools
-export XILINX=/opt/Xilinx/14.7/ISE_DS
-export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/PlanAhead/bin
-export _JAVA_AWT_WM_NONREPARENTING=1
+#export XILINX=/opt/Xilinx/14.7/ISE_DS
+#export PATH=${PATH}:${XILINX}/ISE/bin/lin64:${XILINX}/EDK/bin/lin64/:${XILINX}/PlanAhead/bin
+#export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Haskell
 export PATH=$PATH:~/.cabal/bin
