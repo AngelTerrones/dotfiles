@@ -47,4 +47,3 @@ ZSH_THEME="bira"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/git-flow/git-flow-completion.zsh
