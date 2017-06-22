@@ -45,7 +45,7 @@ values."
      markdown
      org
      syntax-checking
-     extra-langs
+     major-modes
      (python :variables
              python-test-runner '(pytest nose))
      (c-c++ :variables
