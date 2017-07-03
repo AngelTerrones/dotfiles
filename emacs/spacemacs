@@ -351,14 +351,14 @@ you should place your code here."
         '(("PDF Viewer" "mupdf %o")))
 
   ;; verilog-mode
-  (setq verilog-indent-level 4
-        verilog-indent-level-module 4
-        verilog-indent-level-declaration 4
-        verilog-indent-level-behavioral 4
-        verilog-indent-level-directive 4
-        verilog-case-indent 4
+  (setq verilog-indent-level 8
+        verilog-indent-level-module 8
+        verilog-indent-level-declaration 8
+        verilog-indent-level-behavioral 8
+        verilog-indent-level-directive 8
+        verilog-case-indent 8
         verilog-auto-newline nil
-        verilog-auto-lineup 'all
+        verilog-auto-lineup 'assignment
         verilog-indent-begin-after-if t
         verilog-linter "verilator --lint-only -Wall -Wno-fatal")
 
