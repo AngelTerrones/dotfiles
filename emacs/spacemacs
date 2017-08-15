@@ -69,7 +69,6 @@ values."
             shell-default-height 45
             shell-default-position 'bottom)
      yaml
-     haskell
      gpu
      )
    ;; List of additional packages that will be installed without being
