@@ -45,7 +45,7 @@ values."
      markdown
      org
      syntax-checking
-     major-modes
+     ;; major-modes
      (python :variables
              python-test-runner '(pytest nose))
      (c-c++ :variables
@@ -68,14 +68,14 @@ values."
       shell-default-term-shell "/bin/zsh"
             shell-default-height 45
             shell-default-position 'bottom)
-     yaml
      gpu
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(cuda-mode)
+   dotspacemacs-additional-packages '(cuda-mode
+                                      platformio-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -332,6 +332,7 @@ you should place your code here."
   ;; (spacemacs/load-theme 'flatland)
   (exec-path-from-shell-copy-env "SSH_AGENT_PID")
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+  (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
 
   ;; company
   (global-company-mode)
