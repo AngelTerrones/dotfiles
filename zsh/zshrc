@@ -8,8 +8,7 @@ ZSH=$HOME/.zsh/oh-my-zsh
 #ZSH_THEME="blinks"
 #ZSH_THEME="sunrise"
 #ZSH_THEME="pygmalion"
-#ZSH_THEME="bureau"
-ZSH_THEME="bira"
+ZSH_THEME="bureau"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
