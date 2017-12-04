@@ -4,7 +4,7 @@
 ##### connection settings #####
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_music_dir = "/mnt/data/Musica"
+mpd_music_dir = "~/Music"
 
 ##### timeouts and delays #####
 #mpd_connection_timeout = "5"
