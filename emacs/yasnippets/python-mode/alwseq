@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# Insert Google style docstring and function definition.
+# name: myHDL sequential block
+# key: alwseq
+# type: snippet
+# contributor: Angel Terrones
+# --
+@hdl.always_seq(${1:clk_i}.${2:pos}edge, reset=${3:rst_i})
+def ${4:name}_proc():
+	$0

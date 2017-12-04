@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# Insert Google style docstring and function definition.
+# name: myHDL block
+# key: phdl
+# type: snippet
+# contributor: Angel Terrones
+# --
+#!/usr/bin/env python3
+# Copyright (c) `(format-time-string "%Y" (current-time))` Angel Terrones <angelterrones@gmail.com>
+
+import myhdl as hdl
+
+
+@hdl.block
+def ${1:BlockName}($2):
+    $0
+
+    return hdl.instances()
+
+# Local Variables:
+# flycheck-flake8-maximum-line-length: 200
+# flycheck-flake8rc: ".flake8rc"
+# End:

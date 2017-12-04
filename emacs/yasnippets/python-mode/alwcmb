@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# Insert Google style docstring and function definition.
+# name: myHDL combinatorial block
+# key: alwcmb
+# type: snippet
+# contributor: Angel Terrones
+# --
+@hdl.always_comb
+def ${1:name}_proc():
+	$0
