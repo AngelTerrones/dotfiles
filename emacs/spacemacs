@@ -343,9 +343,6 @@ you should place your code here."
 
   ;; python
   (setq python-shell-completion-native-enable nil)
-  (add-hook 'python-mode-hook (lambda ()
-                                (require 'sphinx-doc)
-                                (sphinx-doc-mode t)))
 
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
