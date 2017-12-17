@@ -9,3 +9,6 @@ export PATH=$PATH:~/.cabal/bin
 
 # SSH agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# RISC-V none
+export PATH=$PATH:~/Install/RISC-V/riscv-none-gcc-7.2.0/bin
