@@ -68,13 +68,15 @@ values."
      (version-control :variables
                       version-control-diff-side 'left)
      (shell :variables
-      shell-default-shell 'term
-      shell-default-term-shell "/bin/zsh"
+            shell-default-shell 'term
+            shell-default-term-shell "/bin/zsh"
             shell-default-height 45
             shell-default-position 'bottom)
      gpu
      html
-     haskell
+     (haskell :variables
+              haskell-completion-backend 'intero
+              haskell-enable-hindent t)
      selectric
      )
    ;; List of additional packages that will be installed without being
