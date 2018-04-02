@@ -378,6 +378,7 @@ you should place your code here."
   (put 'company-c-headers-path-system 'safe-local-variable (lambda (xx) t))
   (put 'flycheck-clang-language-standard 'safe-local-variable (lambda (xx) t))
   (setq c-default-style "linux")
+  (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )  ;; fucking defaults
 
   ;; line numbers + relative numbers
   (add-hook 'prog-mode-hook 'linum-mode)
