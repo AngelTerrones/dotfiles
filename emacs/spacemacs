@@ -37,7 +37,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     pdf-tools
+     pdf
      semantic
      better-defaults
      emacs-lisp
@@ -288,7 +288,7 @@ values."
    ;; If non-nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -379,10 +379,6 @@ you should place your code here."
   (put 'flycheck-clang-language-standard 'safe-local-variable (lambda (xx) t))
   (setq c-default-style "linux")
   (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )  ;; fucking defaults
-
-  ;; line numbers + relative numbers
-  (add-hook 'prog-mode-hook 'linum-mode)
-  (linum-relative-toggle)
 
   ;; magit
   (setq magit-repository-directories '("~/Projects/"))
