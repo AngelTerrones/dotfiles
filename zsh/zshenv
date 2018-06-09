@@ -4,13 +4,7 @@ export TERM=xterm-256color
 # default editor
 export EDITOR=vim
 
-# Haskell
-#export PATH=$PATH:~/.cabal/bin
-
 # SSH agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-# RISC-V none
-#export PATH=$PATH:/opt/gnu-mcu-eclipse/riscv-none-gcc/7.2.0-1-20171109-1926/bin/
 
 alias arch='uname -m'
