@@ -339,11 +339,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; (spacemacs/load-theme 'flatland)
-  (exec-path-from-shell-copy-env "SSH_AGENT_PID")
-  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
-  (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
-
   ;; company
   (global-company-mode)
   (global-set-key (kbd "C-SPC") 'company-complete)
@@ -381,5 +376,5 @@ you should place your code here."
   (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )  ;; fucking defaults
 
   ;; magit
-  (setq magit-repository-directories '("~/Projects/"))
+  (setq magit-repository-directories '(("~/Projects/" . 1)))
   )
