@@ -1,2 +1,2 @@
 typeset -U path
-path=(~/.cabal/bin ~/.local/bin ~/Installers/RISC-V/gnu-mcu-eclipse/riscv-none-gcc/7.2.0-3-20180506-1300/bin $path[@])
+path=(~/.cabal/bin ~/.local/bin /opt/gnu-mcu-eclipse/riscv-none-gcc/7.2.0-4-20180606-1631/bin/ $path[@])
