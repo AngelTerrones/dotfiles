@@ -42,5 +42,5 @@ $HOME/.config/polybar/launch.sh
 
 setxkbmap -option ctrl:nocaps
 setxkbmap -option compose:ralt
-
+feh --bg-fill ~/Pictures/wallpapers/archlinux.png --no-xinerama&!
 nm-applet&!
