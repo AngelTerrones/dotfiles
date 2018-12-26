@@ -155,6 +155,7 @@ assign [class="terminator"] $tag2
 assign [class="Emacs24"] $tag3
 assign [class="Emacs"] $tag3
 assign [class="Thunar"] $tag4
+assign [class="dolphin"] $tag4
 assign [class="Nemo"] $tag4
 assign [class="nemo"] $tag4
 assign [class="Lxappearance"] $tag4
@@ -162,12 +163,14 @@ assign [class="Gimp"] $tag5
 assign [class="krita"] $tag5
 assign [class="Inkscape"] $tag5
 assign [class="Ristretto"] $tag5
-assign [class="Vlc"] $tag5
+assign [class="gwenview"] $tag5
+assign [class="vlc"] $tag5
 assign [class="cantata"] $tag5
 assign [class="Designer"] $tag6
 assign [class="assistant"] $tag7
 assign [class="MuPDF"] $tag7
 assign [class="Evince"] $tag7
+assign [class="okular"] $tag7
 assign [class="Mendeley Desktop"] $tag7
 assign [class="QComicBook"] $tag7
 assign [class="VirtualBox"] $tag8
@@ -312,8 +315,8 @@ bindsym $mod+minus exec mpc volume -10
 # ------------------------------------------------------------------------------
 # other
 # ------------------------------------------------------------------------------
-bindsym $mod+Shift+w exec firefox
-bindsym $mod+Shift+f exec nemo
+bindsym $mod+Shift+w exec chromium
+bindsym $mod+Shift+f exec dolphin
 bindsym $mod+Shift+e exec emacs
 
 # ------------------------------------------------------------------------------
@@ -328,15 +331,9 @@ client.urgent           #2D2D2D #2D2D2D #dcdcdc #900000
 # Startup programs
 # ------------------------------------------------------------------------------
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/IrFMpUu.jpg
-#exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/archlinux.png --no-xinerama
 
 exec --no-startup-id ~/.fan.sh
-exec --no-startup-id mpd
-#exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id numlockx on
-exec --no-startup-id nemo --daemon
-exec --no-startup-id guake
-exec --no-startup-id insync start
 exec --no-startup-id nm-applet
 
 # ------------------------------------------------------------------------------
@@ -356,16 +353,29 @@ bindsym $mod+Shift+Left move workspace to output left
 # Custom KeyBinds
 # ------------------------------------------------------------------------------
 bindsym Control+mod1+l exec sh ~/.config/i3/i3lock.sh
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec spectacle
 #bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 bindsym F10 exec urxvt -T 'i3 Shortcuts' -e ~/.config/i3/cheatsheet.sh
 for_window [instance="urxvt" title="i3 Shortcuts"] floating enable, move absolute position center, resize grow left 318, resize grow right 318, resize grow down 115, resize grow up 115
 # ------------------------------------------------------------------------------
 # set the bloody keyboard layout
 # ------------------------------------------------------------------------------
-# exec setxkbmap latam
-exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id setxkbmap -layout es -option ctrl:nocaps
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id compton -b
+
+# for KDE
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+## Avoid tiling popups, dropdown windows from plasma
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+for_window [class="plasmashell"]    floating enable
+for_window [class="Plasma"]         floating enable
+for_window [title="plasma-desktop"] floating enable
+for_window [class="krunner"]        floating enable
+for_window [class="Kmix"]           floating enable
+for_window [class="Klipper"]        floating enable
+for_window [class="Plasmoidviewer"] floating enable
+no_focus [class="plasmashell"]

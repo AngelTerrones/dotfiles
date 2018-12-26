@@ -28,7 +28,7 @@ alert = #bd2c40
 
 ;==========================================================
 [bar/topbar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:DVI-I-0}
 width = 100%
 height = 24
 fixed-center = true
@@ -57,7 +57,7 @@ font-5 = "fixed:pixelsize=10;1"
 
 modules-left = i3 mpd
 modules-center = date
-modules-right = pulseaudio memory cpu wlan eth battery temperature powermenu
+modules-right = pulseaudio memory cpu eth temperature powermenu
 
 tray-position = right
 tray-padding = 1
@@ -243,13 +243,13 @@ ramp-signal-foreground = ${colors.foreground-alt}
 ;==========================================================
 [module/eth]
 type = internal/network
-interface = enp4s0
+interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip% %downspeed:5%
+label-connected = %local_ip% %downspeed:9%
 
 format-disconnected =
 
