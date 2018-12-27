@@ -30,7 +30,7 @@ alert = #bd2c40
 [bar/topbar]
 monitor = ${env:MONITOR:DVI-I-0}
 width = 100%
-height = 24
+height = 25
 fixed-center = true
 
 background = ${colors.background}
@@ -46,18 +46,14 @@ padding-left = 0
 padding-right = 0
 
 module-margin-left = 1
-module-margin-right = 1
+module-margin-right = 0
 
-font-0 = "Source Code Pro:style=Regular:pixelsize=9;1"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=9;1"
-font-2 = "Font Awesome 5 Brands:pixelsize=9;1"
-font-3 = "Wuncon Siji:pixelsize=10;1"
-font-4 = "Unifont:fontformat=truetype:size=10:antialias=false;0"
-font-5 = "fixed:pixelsize=10;1"
+font-0 = "DejaVu Sans:style=Regular:pixelsize=10;2"
+font-1 = "Material Design Icons:style=Regular:pixelsize=14;2"
 
 modules-left = i3 mpd
 modules-center = date
-modules-right = pulseaudio memory cpu eth temperature powermenu
+modules-right = pulseaudio memory cpu eth temperature
 
 tray-position = right
 tray-padding = 1
@@ -107,24 +103,24 @@ reverse-scroll = false
 ; Example: code;♚ will apply the icon to all workspaces
 ; containing 'code' in the label
 ; Default: false
-fuzzy-match = true
+fuzzy-match = false
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 0;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;喇
+ws-icon-3 = 4;
+ws-icon-4 = 5;掠
+ws-icon-5 = 6;礪
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 ; Available tokens:
 ;   %mode%
 ; Default: %mode%
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-background = #e60053
 
 ; Available tokens:
@@ -175,15 +171,16 @@ label-urgent-padding = 1
 ;==========================================================
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <label-song> [<icon-prev> <icon-stop> <toggle> <icon-next>]
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev =
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-play-font = 2
 
-label-song-maxlen = 25
+label-song-maxlen = 45
 label-song-ellipsis = true
 
 ;==========================================================
@@ -202,7 +199,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -211,34 +208,10 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
-
-;==========================================================
-[module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid% %downspeed:9%
-
-format-disconnected = No WiFi
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-accumulate-stats = true
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 ;==========================================================
 [module/eth]
@@ -247,7 +220,7 @@ interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip% %downspeed:9%
 
@@ -261,11 +234,12 @@ interval = 5
 date = " %Y-%m-%d"
 time = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
+
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date% - %time%
 
 ;==========================================================
 [module/pulseaudio]
@@ -274,8 +248,7 @@ type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
-
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -296,40 +269,6 @@ bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 ;==========================================================
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 100
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
-;==========================================================
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -344,49 +283,14 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
-
-;==========================================================
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = shutdown now
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 ;==========================================================
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 ;==========================================================
 [global/wm]

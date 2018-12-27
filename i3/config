@@ -141,7 +141,7 @@ set $tag6  "6"
 set $tag7  "7"
 set $tag8  "8"
 set $tag9  "9"
-set $tag0 "0"
+set $tag0  "10"
 
 # ------------------------------------------------------------------------------
 # Move
@@ -156,8 +156,6 @@ assign [class="Emacs24"] $tag3
 assign [class="Emacs"] $tag3
 assign [class="Thunar"] $tag4
 assign [class="dolphin"] $tag4
-assign [class="Nemo"] $tag4
-assign [class="nemo"] $tag4
 assign [class="Lxappearance"] $tag4
 assign [class="Gimp"] $tag5
 assign [class="krita"] $tag5
@@ -230,16 +228,16 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # Create Log out, Reboot, Poweroff bindings
 # ------------------------------------------------------------------------------
-mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
-        bindsym $mod+r exec reboot
+mode "Exit: (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym $mod+r exec systemctl reboot
         bindsym $mod+l exit
-        bindsym $mod+p exec poweroff
+        bindsym $mod+p exec systemctl poweroff
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+Shift+x mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+bindsym $mod+Shift+x mode "Exit: (L)ogout, (R)eboot, (P)oweroff"
 
 # ------------------------------------------------------------------------------
 # resize window (you can also use the mouse for that)
@@ -328,15 +326,6 @@ client.unfocused        #2D2D2D #2d2d2d #dcdcdc #292d2e
 client.urgent           #2D2D2D #2D2D2D #dcdcdc #900000
 
 # ------------------------------------------------------------------------------
-# Startup programs
-# ------------------------------------------------------------------------------
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/IrFMpUu.jpg
-
-exec --no-startup-id ~/.fan.sh
-exec --no-startup-id numlockx on
-exec --no-startup-id nm-applet
-
-# ------------------------------------------------------------------------------
 # switching between workspace
 # ------------------------------------------------------------------------------
 # http://i3wm.org/docs/userguide.html#_changing_named_workspaces_moving_to_workspaces
@@ -357,25 +346,38 @@ bindsym Print exec spectacle
 #bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 bindsym F10 exec urxvt -T 'i3 Shortcuts' -e ~/.config/i3/cheatsheet.sh
 for_window [instance="urxvt" title="i3 Shortcuts"] floating enable, move absolute position center, resize grow left 318, resize grow right 318, resize grow down 115, resize grow up 115
+
 # ------------------------------------------------------------------------------
 # set the bloody keyboard layout
 # ------------------------------------------------------------------------------
 exec --no-startup-id setxkbmap -layout es -option ctrl:nocaps
 
+# ------------------------------------------------------------------------------
+# Start polybar
+# ------------------------------------------------------------------------------
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id compton -b
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+
+# ------------------------------------------------------------------------------
+# Startup programs
+# ------------------------------------------------------------------------------
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/IrFMpUu.jpg
+exec --no-startup-id ~/.fan.sh
+exec --no-startup-id numlockx on
+exec --no-startup-id nm-applet
 
 # for KDE
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-## Avoid tiling popups, dropdown windows from plasma
-# for the first time, manually resize them, i3 will remember the setting for floating windows
-for_window [class="plasmashell"]    floating enable
-for_window [class="Plasma"]         floating enable
-for_window [title="plasma-desktop"] floating enable
-for_window [class="krunner"]        floating enable
-for_window [class="Kmix"]           floating enable
-for_window [class="Klipper"]        floating enable
-for_window [class="Plasmoidviewer"] floating enable
-no_focus [class="plasmashell"]
+#exec --no-startup-id wmctrl -c Plasma
+#for_window [title="Desktop — Plasma"] kill; floating enable; border none
+#
+### Avoid tiling popups, dropdown windows from plasma
+## for the first time, manually resize them, i3 will remember the setting for floating windows
+#for_window [class="plasmashell"]    floating enable
+#for_window [class="Plasma"]         floating enable
+#for_window [title="plasma-desktop"] floating enable
+#for_window [class="krunner"]        floating enable
+#for_window [class="Kmix"]           floating enable
+#for_window [class="Klipper"]        floating enable
+#for_window [class="Plasmoidviewer"] floating enable
+#no_focus [class="plasmashell"]
