@@ -48,7 +48,9 @@ values."
      (cmake :variables
             c-c++-enable-cmake-ide-support t)
      ;; major-modes
+     lsp
      (python :variables
+             python-backend 'lsp
              python-test-runner '(pytest nose))
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
@@ -74,12 +76,10 @@ values."
             shell-default-term-shell "/bin/zsh"
             shell-default-height 45
             shell-default-position 'bottom)
-     gpu
      html
      (haskell :variables
               haskell-completion-backend 'intero
               haskell-enable-hindent t)
-     selectric
      asciidoc
      )
    ;; List of additional packages that will be installed without being
@@ -349,6 +349,7 @@ you should place your code here."
 
   ;; python
   (setq python-shell-completion-native-enable nil)
+  (setq lsp-clients-python-settings '(:configurationSources ["flake8"] :plugins (:mccabe (:enabled nil))))
 
   ;; LaTeX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
