@@ -43,12 +43,14 @@ values."
      emacs-lisp
      git
      markdown
-     org
+     (org :variables
+          org-enable-org-journal-support t)
+          ;;org-journal-enable-agenda-integration t)
      syntax-checking
+     lsp
      (cmake :variables
             c-c++-enable-cmake-ide-support t)
      ;; major-modes
-     lsp
      (python :variables
              python-backend 'lsp
              python-test-runner '(pytest nose))
@@ -61,6 +63,7 @@ values."
              colors-colorize-identifiers 'all
              colors-enable-nyan-cat-progress-bar t)
      latex
+     bibtex
      shell-scripts
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
@@ -344,8 +347,19 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; company
   (global-company-mode)
-  (global-set-key (kbd "C-SPC") 'company-complete)
+  (global-set-key (kbd "C-SPC") 'company-lsp)
   (setq default-tab-width 4)
+  ;; makefile
+  (add-hook 'makefile-mode-hook
+            (lambda ()
+              (setq indent-tabs-mode t)
+              (setq-default indent-tabs-mode t)
+              (setq tab-width 4)))
+  (add-hook 'makefile-gmake-mode-hook
+            (lambda ()
+              (setq indent-tabs-mode t)
+              (setq-default indent-tabs-mode t)
+              (setq tab-width 4)))
 
   ;; python
   (setq python-shell-completion-native-enable nil)
@@ -369,6 +383,8 @@ you should place your code here."
         verilog-auto-lineup 'assignment
         verilog-indent-begin-after-if t
         verilog-linter "verilator --lint-only -Wall -Wno-fatal")
+  (setq flycheck-verilog-verilator-executable "flycheck-verilator")
+  (add-hook 'verilog-mode-hook 'flycheck-mode)
 
   ;; C/C+
   ;; (setq-default flycheck-clang-language-standard "c++11")
@@ -381,4 +397,14 @@ you should place your code here."
 
   ;; magit
   (setq magit-repository-directories '(("~/Projects/" . 1)))
+  ;; Org
+  (setq org-directory "~/Documents/journal")
+  (setq org-agenda-files (list org-directory))
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
+  (with-eval-after-load 'org-agenda
+    (require 'org-projectile)
+    (mapcar '(lambda (file)
+               (when (file-exists-p file)
+                 (push file org-agenda-files)))
+            (org-projectile-todo-files)))
   )
