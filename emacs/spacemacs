@@ -43,8 +43,8 @@ values."
      emacs-lisp
      git
      markdown
-     (org :variables
-          org-enable-org-journal-support t)
+     org ;;:variables
+;;          org-enable-org-journal-support t)
           ;;org-journal-enable-agenda-integration t)
      syntax-checking
      lsp
@@ -84,6 +84,7 @@ values."
               haskell-completion-backend 'intero
               haskell-enable-hindent t)
      asciidoc
+     emoji
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -352,13 +353,9 @@ you should place your code here."
   ;; makefile
   (add-hook 'makefile-mode-hook
             (lambda ()
-              (setq indent-tabs-mode t)
-              (setq-default indent-tabs-mode t)
               (setq tab-width 4)))
   (add-hook 'makefile-gmake-mode-hook
             (lambda ()
-              (setq indent-tabs-mode t)
-              (setq-default indent-tabs-mode t)
               (setq tab-width 4)))
 
   ;; python
@@ -379,8 +376,10 @@ you should place your code here."
         verilog-indent-level-behavioral 4
         verilog-indent-level-directive 4
         verilog-case-indent 4
+        verilog-cexp-indent 4
         verilog-auto-newline nil
-        verilog-auto-lineup 'assignment
+        verilog-auto-lineup (quote all)
+        verilog-align-ifelse t
         verilog-indent-begin-after-if t
         verilog-linter "verilator --lint-only -Wall -Wno-fatal")
   (setq flycheck-verilog-verilator-executable "flycheck-verilator")
@@ -407,4 +406,17 @@ you should place your code here."
                (when (file-exists-p file)
                  (push file org-agenda-files)))
             (org-projectile-todo-files)))
+  (setq org-capture-templates
+        '(("t" "TODO" entry (file+headline "notes.org" "Tasks")
+           "* TODO %? :%^G: \n:PROPERTIES:\n:Created: %U\n:Target: %l\n:END:\n   %i\n"
+           :prepend t
+           :kill-buffer t
+           :empty-lines 1)
+          ("n" "Note" entry (file+headline "notes.org" "Notes")
+           "* NOTE %? :%^G: \n:PROPERTIES:\n:Created: %U\n:END:\n   %i\n"
+           :prepend t
+           :kill-buffer t
+           :empty-lines 1)
+          ("j" "Journal" entry (file+datetree "~/Documents/journal/journal.org")
+           "* %? %^G\nEntered on %U\n")))
   )
