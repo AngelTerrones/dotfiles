@@ -8,7 +8,7 @@
 	status = auto
 	branch = auto
 [core]
-	editor = vim
+	editor = nvim
 [cola]
 	fontdiff = Source Code Pro,10,-1,5,50,0,0,0,0,0
 	tabwidth = 4
@@ -20,3 +20,8 @@
 	tool = meld
 [alias]
 	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit --date-order
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
