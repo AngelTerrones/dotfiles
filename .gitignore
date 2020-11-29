@@ -38,3 +38,7 @@ __pycache__
 *.db
 *.pid
 mpdstate
+
+nvim/autoload/plugged/
+yarn*
+node_modules/
