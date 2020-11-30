@@ -2,10 +2,10 @@
 let g:mapleader = "\<Space>"
 
 " Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+inoremap <expr> <C-j> ("\<C-n>")
+inoremap <expr> <C-k> ("\<C-p>")
 
-" Use alt + hjkl to resize windows
+" Use ctrl + arrows to resize windows
 nnoremap <C-Up>    :resize +2<CR>
 nnoremap <C-Down>  :resize -2<CR>
 nnoremap <C-Left>  :vertical resize -2<CR>
@@ -18,6 +18,8 @@ inoremap kj <Esc>
 nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
 nnoremap <S-TAB> :bprevious<CR>
+" Delete buffer
+" nnoremap <C-w> :bd<CR>
 
 " Alternate way to save
 nnoremap <C-s> :w<CR>

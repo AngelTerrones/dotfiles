@@ -1,7 +1,12 @@
+"Activate modules
 source $HOME/.config/nvim/paths.vim
 source $HOME/.config/nvim/general/settings.vim
-source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/plugs/plugins.vim
 source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/keys/mappings.vim
-
+source $HOME/.config/nvim/modules/rnvimr.vim
+source $HOME/.config/nvim/modules/startify.vim
+source $HOME/.config/nvim/modules/tabline.vim
+source $HOME/.config/nvim/modules/signify.vim
+source $HOME/.config/nvim/modules/whitespace.vim

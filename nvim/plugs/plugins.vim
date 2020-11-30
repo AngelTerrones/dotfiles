@@ -17,6 +17,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " airline
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    " Range
+    Plug 'kevinhwang91/rnvimr'
+    " startify
+    Plug 'mhinz/vim-startify'
+    " Tabs
+    Plug 'pacha/vem-tabline'
+    Plug 'ryanoasis/vim-devicons'
+    " git
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    " Whitespace
+    Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
