@@ -29,6 +29,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     " Whitespace
     Plug 'ntpeters/vim-better-whitespace'
+    " Search
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
 
 call plug#end()
 
