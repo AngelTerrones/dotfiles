@@ -11,3 +11,4 @@ source $HOME/.config/nvim/modules/tabline.vim
 source $HOME/.config/nvim/modules/signify.vim
 source $HOME/.config/nvim/modules/whitespace.vim
 source $HOME/.config/nvim/modules/search.vim
+source $HOME/.config/nvim/modules/coc.vim
