@@ -14,4 +14,5 @@ source $HOME/.config/nvim/modules/whitespace.vim
 source $HOME/.config/nvim/modules/search.vim
 source $HOME/.config/nvim/modules/coc.vim
 source $HOME/.config/nvim/modules/fzf-preview.vim
+source $HOME/.config/nvim/modules/vista.vim
 source $HOME/.config/nvim/keys/which-key.vim

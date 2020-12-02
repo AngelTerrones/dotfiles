@@ -41,6 +41,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-rooter'
     " extras
     Plug 'liuchengxu/vim-which-key'
+    " Vista
+    Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
