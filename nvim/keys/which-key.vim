@@ -49,7 +49,6 @@ let g:which_key_map['w'] = {
 " buffers
 let g:which_key_map['b'] = {
       \ 'name' : '+buffers',
-      \ 's' : [':w'         , 'save buffer']   ,
       \ 'd' : [':Bdelete'   , 'delete buffer']   ,
       \ 'f' : [':bfirst'    , 'first buffer']    ,
       \ 'h' : [':Startify'  , 'home buffer']     ,
