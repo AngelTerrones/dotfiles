@@ -1,0 +1,5 @@
+highlight_wavewindow yes
+fill_waveform yes
+use_roundcaps 1
+fontname_signals Source Code Pro 14
+fontname_waves Source Code Pro 14
