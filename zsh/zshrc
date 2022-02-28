@@ -104,5 +104,6 @@ export EDITOR='nvim'
 
 if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
 	export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+	export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 fi
 
