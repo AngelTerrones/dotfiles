@@ -102,8 +102,11 @@ alias vi='nvim'
 alias vim='nvim'
 export EDITOR='nvim'
 
+PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+PATH="$PATH:$PYTHON_BIN_PATH"
+
 if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
-	export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+#	export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
 	export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 fi
-
+setopt nonomatch
