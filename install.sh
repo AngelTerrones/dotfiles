@@ -11,14 +11,6 @@ PWD=$(pwd)
 echo -e "Installing dotfiles: git"
 ln -sfn $PWD/git/gitconfig ~/.gitconfig
 
-# mpd
-echo -e "Installing dotfiles: mpd"
-ln -sfn $PWD/mpd ~/.config/mpd
-
-# ncmpcpp
-echo -e "Installing dotfiles: ncmpcpp"
-ln -sfn $PWD/ncmpcpp ~/.config/ncmpcpp
-
 # zsh
 echo -e "Installing dotfiles: zsh"
 ln -sfn $PWD/zsh ~/.zsh
