@@ -110,3 +110,6 @@ if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
 	export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 fi
 setopt nonomatch
+
+LS_COLORS="ow=01;36;40" && export LS_COLORS
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
