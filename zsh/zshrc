@@ -105,10 +105,10 @@ export EDITOR='nvim'
 PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 PATH="$PATH:$PYTHON_BIN_PATH"
 
-if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
+#if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
 #	export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
-	export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
-fi
+#	export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
+#fi
 setopt nonomatch
 
 LS_COLORS="ow=01;36;40" && export LS_COLORS
