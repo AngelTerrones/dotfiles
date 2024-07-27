@@ -24,3 +24,6 @@
 	required = true
 [init]
 	defaultBranch = master
+[user]
+	email = angelterrones@gmail.com
+	name = Angel Terrones
