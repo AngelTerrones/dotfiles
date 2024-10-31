@@ -42,3 +42,6 @@ mpdstate
 nvim/autoload/plugged/
 yarn*
 node_modules/
+
+# macbook files
+.DS*
