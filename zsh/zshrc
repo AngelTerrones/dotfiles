@@ -53,6 +53,14 @@ alias vi='nvim'
 alias vim='nvim'
 export EDITOR='nvim'
 
+# move the comp files and the history to .cache
+ZSH_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/"
+if [[ ! -d $ZSH_CACHE ]]; then
+  mkdir -p $ZSH_CACHE
+fi
+ZSH_COMPDUMP="$ZSH_CACHE/.zcompdump-${HOST}-${ZSH_VERSION}"
+HISTFILE="$ZSH_CACHE/zsh_history"
+
 # load omzsh
 source "${ZSH_HOME}/oh-my-zsh.sh"
 
