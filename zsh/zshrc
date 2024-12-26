@@ -65,7 +65,7 @@ HISTFILE="$ZSH_CACHE/zsh_history"
 source "${ZSH_HOME}/oh-my-zsh.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
 eval "$(fzf --zsh)"
 
 # Configure fzf/fzf-tab
