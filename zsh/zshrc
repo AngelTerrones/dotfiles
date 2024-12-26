@@ -1,0 +1,68 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# MocOS
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Set the directory to store omzsh
+ZSH_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/omzsh"
+ZSH_CUSTOM="${ZSH_HOME}/custom"
+
+# Download omzsh
+if [ ! -d "$ZSH_HOME" ]; then
+    mkdir -p "$(dirname $ZSH_HOME)"
+    git clone https://github.com/ohmyzsh/ohmyzsh "$ZSH_HOME"
+fi
+
+# Download powerlevel10k
+P10K="$ZSH_CUSTOM/themes/powerlevel10k"
+if [ ! -d "$P10K" ]; then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K"
+fi
+
+ZSH_SH="$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+if [ ! -d "$ZSH_SH" ]; then
+    git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_SH"
+fi
+
+ZSH_AS="$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+if [ ! -d "$ZSH_AS" ]; then
+    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "$ZSH_AS"
+fi
+
+ZSH_FZFTAB="$ZSH_CUSTOM/plugins/fzf-tab"
+if [ ! -d "$ZSH_FZFTAB" ]; then
+    git clone --depth=1 https://github.com/Aloxaf/fzf-tab "$ZSH_FZFTAB"
+fi
+
+# Theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# plugins
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab)
+
+# aliases
+alias vi='nvim'
+alias vim='nvim'
+export EDITOR='nvim'
+
+# load omzsh
+source "${ZSH_HOME}/oh-my-zsh.sh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(fzf --zsh)"
+
+# Configure fzf/fzf-tab
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
