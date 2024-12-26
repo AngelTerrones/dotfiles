@@ -74,3 +74,12 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# Env variables
+JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
+if [ ! -d "$JUPYTER_CONFIG_DIR" ]; then
+    mkdir -p $JUPYTER_CONFIG_DIR
+fi
+
+export JUPYTER_CONFIG_DIR
+export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
