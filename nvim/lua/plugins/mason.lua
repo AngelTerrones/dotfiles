@@ -6,7 +6,6 @@ return {
 				"stylua", -- formatter
 				"shellcheck", -- static analysis tool for shell scripts
 				"shfmt", -- shell formatter
-				"rust-analyzer", -- rust
 				"pyright", -- python LSP
 			})
 		end,
