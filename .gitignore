@@ -45,3 +45,6 @@ node_modules/
 
 # macbook files
 .DS*
+
+# LazyVim files
+lazy*.json

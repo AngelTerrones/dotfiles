@@ -17,4 +17,8 @@ echo -e "Installing dotfiles: zsh"
 ln -sfn $PWD/zsh ~/.zsh
 ln -sfn $PWD/zsh/zshrc ~/.zshrc
 
+# nvim
+echo -e "Installing dotfiles: nvim"
+ln -sfn $PWD/nvim/ ~/.config/nvim
+
 echo -e "Done"
