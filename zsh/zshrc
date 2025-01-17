@@ -60,6 +60,7 @@ if [[ ! -d $ZSH_CACHE ]]; then
 fi
 ZSH_COMPDUMP="$ZSH_CACHE/.zcompdump-${HOST}-${ZSH_VERSION}"
 HISTFILE="$ZSH_CACHE/zsh_history"
+FPATH="$HOME/.zfunc:${FPATH}"
 
 # load omzsh
 source "${ZSH_HOME}/oh-my-zsh.sh"
