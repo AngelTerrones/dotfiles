@@ -48,3 +48,6 @@ node_modules/
 
 # LazyVim files
 lazy*.json
+
+# tmux pluggins
+tmux/plugins/*
