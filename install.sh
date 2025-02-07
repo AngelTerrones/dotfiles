@@ -18,11 +18,24 @@ ln -sfn $PWD/zsh ~/.zsh
 ln -sfn $PWD/zsh/zshrc ~/.zshrc
 
 # tmux
-git clone https://github.com/tmux-plugins/tpm tmux/plugins/tpm
-ln -sfn $PWD/tmux/ ~/.config/tmux
+TMUX_FOLDER="$HOME/.config/tmux"
+if [[ ! -d $TMUX_FOLDER ]]; then
+  git clone https://github.com/tmux-plugins/tpm tmux/plugins/tpm
+  ln -sfn $PWD/tmux/ $TMUX_FOLDER
+fi
 
 # nvim
 echo -e "Installing dotfiles: nvim"
 ln -sfn $PWD/nvim/ ~/.config/nvim
+
+if [[ "$1" = "mpd" ]]; then
+  # mpd
+  echo -e "Installing dotfiles: mpd"
+  ln -sfn $PWD/mpd ~/.config/mpd
+
+  # ncmpcpp
+  echo -e "Installing dotfiles: ncmpcpp"
+  ln -sfn $PWD/ncmpcpp ~/.config/ncmpcpp
+fi
 
 echo -e "Done"
