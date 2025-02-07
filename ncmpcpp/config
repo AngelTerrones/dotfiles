@@ -156,4 +156,4 @@ main_window_color = white
 statusbar_color = "blue"
 active_window_border = "blue"
 volume_color = "white"
-execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+#execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
