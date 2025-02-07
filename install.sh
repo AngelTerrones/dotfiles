@@ -32,6 +32,7 @@ if [[ "$1" = "mpd" ]]; then
   # mpd
   echo -e "Installing dotfiles: mpd"
   ln -sfn $PWD/mpd ~/.config/mpd
+  mkdir -p ~/.config/mpd/playlists
 
   # ncmpcpp
   echo -e "Installing dotfiles: ncmpcpp"
