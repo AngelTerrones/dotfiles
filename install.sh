@@ -36,6 +36,7 @@ if [[ "$1" = "mpd" ]]; then
   # ncmpcpp
   echo -e "Installing dotfiles: ncmpcpp"
   ln -sfn $PWD/ncmpcpp ~/.config/ncmpcpp
+  mkdir -p ~/.config/ncmpcpp/lyrics
 fi
 
 echo -e "Done"

@@ -1,6 +1,9 @@
 #
 # ~/.ncmpcpp/config
 #
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+
 ##### connection settings #####
 mpd_host = "localhost"
 mpd_port = "6600"
@@ -153,4 +156,4 @@ main_window_color = white
 statusbar_color = "blue"
 active_window_border = "blue"
 volume_color = "white"
-
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
