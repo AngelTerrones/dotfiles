@@ -5,7 +5,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/lyrics
 
 store_lyrics_in_song_dir = no
-lyrics_fetchers = genius, tekstowo, plyrics, justsomelyrics, jahlyrics, zeneszoveg, internet
+lyrics_fetchers = tekstowo, plyrics, justsomelyrics, jahlyrics, zeneszoveg, internet
 ##### connection settings #####
 mpd_host = "localhost"
 mpd_port = "6600"

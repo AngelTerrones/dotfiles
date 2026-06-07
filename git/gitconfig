@@ -17,7 +17,7 @@
 	editor = subl
 	historybrowser = gitk
 [merge]
-	tool = meld
+	tool = kdiff3
 [alias]
 	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit --date-order
 [filter "lfs"]
@@ -27,3 +27,5 @@
 	required = true
 [init]
 	defaultBranch = master
+[credential]
+	helper = store
