@@ -7,6 +7,7 @@ fi
 
 # MocOS
 if [[ -f "/opt/homebrew/bin/brew" ]] then
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
   # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
