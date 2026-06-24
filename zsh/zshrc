@@ -95,11 +95,11 @@ export JUPYTER_CONFIG_DIR
 export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
 
 # zsh-z
-ZSHZ_DATA="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-if [ ! -d "$ZSHZ_DATA" ]; then
-    mkdir -p $ZSHZ_DATA
+ZSHZ_DATA_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+if [ ! -d "$ZSHZ_DATA_DIR" ]; then
+    mkdir -p $ZSHZ_DATA_DIR
 fi
-export ZSHZ_DATA="$ZSHZ_DATA/.z"
+export ZSHZ_DATA="$ZSHZ_DATA_DIR/z"
 
 
 # aliases
