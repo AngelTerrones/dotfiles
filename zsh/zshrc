@@ -52,11 +52,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab)
 
-# aliases
-alias vi='nvim'
-alias vim='nvim'
-export EDITOR='nvim'
-
 # move the comp files and the history to .cache
 ZSH_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 if [[ ! -d $ZSH_CACHE ]]; then
@@ -88,3 +83,14 @@ fi
 
 export JUPYTER_CONFIG_DIR
 export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
+
+# aliases
+alias vi='nvim'
+alias vim='nvim'
+export EDITOR='nvim'
+
+alias ls='eza --icons --color=always --group-directories-first'
+alias ll='eza -alF --icons --color=always --group-directories-first'
+alias la='eza -a --icons --color=always --group-directories-first'
+alias l='eza -F --icons --color=always --group-directories-first'
+alias l.='eza -a | egrep "^\."'
