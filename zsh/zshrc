@@ -85,6 +85,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Env variables
+# Jupyter
 JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
 if [ ! -d "$JUPYTER_CONFIG_DIR" ]; then
     mkdir -p $JUPYTER_CONFIG_DIR
@@ -92,6 +93,14 @@ fi
 
 export JUPYTER_CONFIG_DIR
 export IPYTHONDIR="${XDG_CONFIG_HOME:-$HOME/.config}/ipython"
+
+# zsh-z
+ZSHZ_DATA="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+if [ ! -d "$ZSHZ_DATA" ]; then
+    mkdir -p $ZSHZ_DATA
+fi
+export ZSHZ_DATA="$ZSHZ_DATA/.z"
+
 
 # aliases
 alias vi='nvim'
