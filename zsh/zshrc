@@ -31,26 +31,35 @@ if [ ! -d "$P10K" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K"
 fi
 
+# syntax highlight
 ZSH_SH="$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 if [ ! -d "$ZSH_SH" ]; then
     git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_SH"
 fi
 
+# autosuggestions
 ZSH_AS="$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 if [ ! -d "$ZSH_AS" ]; then
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "$ZSH_AS"
 fi
 
+# fzf-tab
 ZSH_FZFTAB="$ZSH_CUSTOM/plugins/fzf-tab"
 if [ ! -d "$ZSH_FZFTAB" ]; then
     git clone --depth=1 https://github.com/Aloxaf/fzf-tab "$ZSH_FZFTAB"
+fi
+
+# z (cd)
+ZSH_Z="$ZSH_CUSTOM/plugins/zsh-z"
+if [ ! -d "$ZSH_Z" ]; then
+    git clone --depth=1 https://github.com/agkozak/zsh-z "$ZSH_Z"
 fi
 
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # plugins
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab zsh-z)
 
 # move the comp files and the history to .cache
 ZSH_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
