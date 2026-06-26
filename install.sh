@@ -18,10 +18,12 @@ ln -sfn $PWD/zsh ~/.zsh
 ln -sfn $PWD/zsh/zshrc ~/.zshrc
 
 # tmux
+echo -e "Installing dotfiles: tmux"
 TMUX_FOLDER="$HOME/.config/tmux"
 if [[ ! -d $TMUX_FOLDER ]]; then
   git clone https://github.com/tmux-plugins/tpm tmux/plugins/tpm
   ln -sfn $PWD/tmux/ $TMUX_FOLDER
+  $TMUX_FOLDER/plugins/tpm/scripts/install_plugins.sh
 fi
 
 # nvim
