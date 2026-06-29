@@ -4,7 +4,7 @@ return {
 		opts = {
 			servers = {
 				-- Replace 'pyright' with the name of the tool you installed on your system
-				clangd = { mason = false },
+				-- clangd = { mason = false }, -- wake me up when macOS ships llvm > 22
 				ruff = { mason = false },
 				ty = { mason = false },
 			},
@@ -25,6 +25,7 @@ return {
 						"--completion-style=detailed",
 						"--function-arg-placeholders",
 						"--fallback-style=llvm",
+						"--enable-config",
 					},
 				},
 			},
