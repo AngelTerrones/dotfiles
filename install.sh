@@ -27,7 +27,12 @@ if [[ ! -d $TMUX_FOLDER ]]; then
 fi
 
 # nvim
-echo -e "Installing dotfiles: nvim"
+echo -e "Installing dotfiles: nvim (deleting old config)"
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+# symlink the config
 ln -sfn $PWD/nvim/ ~/.config/nvim
 
 if [[ "$1" = "mpd" ]]; then
