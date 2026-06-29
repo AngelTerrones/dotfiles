@@ -26,6 +26,14 @@ if [[ ! -d $TMUX_FOLDER ]]; then
   $TMUX_FOLDER/plugins/tpm/scripts/install_plugins.sh
 fi
 
+# clangd
+echo -e "Installing dotfiles: clangd"
+if [[ $(uname) == "Darwin" ]]; then
+  ln -sfn $PWD/clangd ~/Library/Preferences/clangd
+else
+  ln -sfn $PWD/clangd ~/.config/clangd
+fi
+
 # nvim
 echo -e "Installing dotfiles: nvim (deleting old config)"
 rm -rf ~/.config/nvim
