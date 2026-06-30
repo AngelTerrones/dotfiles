@@ -50,16 +50,16 @@ if [ ! -d "$ZSH_FZFTAB" ]; then
 fi
 
 # z (cd)
-ZSH_Z="$ZSH_CUSTOM/plugins/zsh-z"
-if [ ! -d "$ZSH_Z" ]; then
-    git clone --depth=1 https://github.com/agkozak/zsh-z "$ZSH_Z"
-fi
+# ZSH_Z="$ZSH_CUSTOM/plugins/zsh-z"
+# if [ ! -d "$ZSH_Z" ]; then
+#     git clone --depth=1 https://github.com/agkozak/zsh-z "$ZSH_Z"
+# fi
 
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # plugins
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab zsh-z)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf-tab)
 
 # move the comp files and the history to .cache
 ZSH_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
