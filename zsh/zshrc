@@ -111,3 +111,6 @@ alias ll='eza -lF --icons --git --color=always --group-directories-first'
 alias la='eza -al --icons --git --color=always --group-directories-first'
 alias l='eza -F --icons --git --color=always --group-directories-first'
 alias l.='eza -a | egrep "^\."'
+
+# :/
+export CMAKE_EXPORT_COMPILE_COMMANDS=ON
